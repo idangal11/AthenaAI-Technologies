@@ -481,9 +481,11 @@ function setLang(l){
   try{ localStorage.setItem("athena-lang", l); }catch(x){}
   renderChat();
 }
+/* Lead backend: Google Apps Script web app URL (see lead-backend/Code.gs). While empty, the form posts to FormSubmit. */
+var LEAD_ENDPOINT = "";
 var MSG = {
-  he: { need: "נא למלא שם וטלפון או דוא״ל כדי שנוכל לחזור אליכם.", sending: "שולח...", okT: "הפרטים התקבלו, תודה!", okP: "אחזור אליכם בהקדם לתיאום שיחת ייעוץ." },
-  en: { need: "Please fill in your name and a phone or email so we can get back to you.", sending: "Sending...", okT: "Got your details, thank you!", okP: "I'll get back to you soon to set up a consultation call." }
+  he: { need: "נא למלא שם וטלפון או דוא״ל כדי שנוכל לחזור אליכם.", sending: "שולח...", okT: "הפרטים התקבלו, תודה!", okP: "אחזור אליכם בהקדם לתיאום שיחת ייעוץ.", fail: "השליחה לא הצליחה. אפשר להתקשר ל-052-426-8076 או לכתוב ל-idangal2426@gmail.com." },
+  en: { need: "Please fill in your name and a phone or email so we can get back to you.", sending: "Sending...", okT: "Got your details, thank you!", okP: "I'll get back to you soon to set up a consultation call.", fail: "Sending failed. You can call 052-426-8076 or write to idangal2426@gmail.com." }
 };
 var PKG = { page: "דף נחיתה מעוצב", bot: "דף נחיתה + צ'אטבוט AI", agent: "דף נחיתה + פתרון AI עסקי מתקדם", unsure: "עדיין לא בטוח/ה" };
 function setStatus(text, err){ var st = document.getElementById("status"); st.textContent = text; st.className = "status" + (err ? " err" : ""); }
@@ -497,6 +499,18 @@ function sendForm(e){
   if(el._honey.value){ e.preventDefault(); return; }
   var name = el.name.value.trim(), phone = el.phone.value.trim(), email = el.email.value.trim();
   if(!name || (!phone && !email)){ e.preventDefault(); setStatus(m.need, true); return; }
+  if(LEAD_ENDPOINT){
+    e.preventDefault();
+    var btn = document.getElementById("send"), data = new URLSearchParams();
+    data.append("name", name); data.append("business", el.business.value.trim()); data.append("phone", phone); data.append("email", email);
+    data.append("package", PKG[el.pkg.value] || ""); data.append("page", location.origin + location.pathname);
+    btn.disabled = true; setStatus(m.sending, false);
+    fetch(LEAD_ENDPOINT, { method: "POST", body: data })
+      .then(function(r){ return r.json(); })
+      .then(function(d){ if(!d || d.ok !== true) throw new Error("rejected"); showDone(); })
+      .catch(function(){ btn.disabled = false; setStatus(m.fail, true); });
+    return;
+  }
   el.package.value = PKG[el.pkg.value] || "-";
   el._subject.value = "פנייה חדשה מדף הנחיתה: " + name;
   el._next.value = location.origin + location.pathname + "?sent=1#quote";
