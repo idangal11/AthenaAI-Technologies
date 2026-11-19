@@ -397,11 +397,16 @@ details p{padding:0 20px 18px;font-size:15.5px;color:#e6e9f5;text-wrap:pretty}
       <a href="mailto:idangal2426@gmail.com"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 22 22" fill="none"><rect x="3" y="5" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M4 7l7 5 7-5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span dir="ltr">idangal2426@gmail.com</span></a>
     </div>
   </div>
-  <form class="form" id="form" novalidate>
+  <form class="form" id="form" novalidate method="POST" action="https://formsubmit.co/idangal2426@gmail.com" accept-charset="UTF-8">
+    <input type="hidden" name="_subject" value="פנייה חדשה מדף הנחיתה">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://idangal11.github.io/AthenaAI-Technologies/?sent=1#quote">
+    <input type="hidden" name="package" value="">
     <h3 data-en="Fill in your details and I'll get back to you soon!">מלאו פרטים ואצור איתכם קשר בהקדם!</h3>
     <div class="row">
       <label class="f"><span data-en="Full name">שם מלא</span><input type="text" name="name" autocomplete="name" placeholder="השם שלך" data-en-ph="Your name"></label>
-      <label class="f"><span data-en="Business name">שם העסק</span><input type="text" name="biz" autocomplete="organization" placeholder="איך קוראים לעסק?" data-en-ph="What's the business called?"></label>
+      <label class="f"><span data-en="Business name">שם העסק</span><input type="text" name="business" autocomplete="organization" placeholder="איך קוראים לעסק?" data-en-ph="What's the business called?"></label>
     </div>
     <div class="row">
       <label class="f"><span data-en="Phone">טלפון</span><input type="tel" name="phone" autocomplete="tel" dir="ltr" placeholder="מספר הטלפון שלך" data-en-ph="Your phone number"></label>
@@ -476,28 +481,28 @@ function setLang(l){
   try{ localStorage.setItem("athena-lang", l); }catch(x){}
   renderChat();
 }
-var MAIL = "idangal2426@gmail.com";
 var MSG = {
-  he: { need: "נא למלא שם וטלפון או דוא״ל כדי שנוכל לחזור אליכם.", sending: "שולח...", okT: "הפרטים התקבלו, תודה!", okP: "אחזור אליכם בהקדם לתיאום שיחת ייעוץ.", fail: "השליחה לא הצליחה. אפשר להתקשר ל-052-426-8076 או לכתוב ל-idangal2426@gmail.com." },
-  en: { need: "Please fill in your name and a phone or email so we can get back to you.", sending: "Sending...", okT: "Got your details, thank you!", okP: "I'll get back to you soon to set up a consultation call.", fail: "Sending failed. You can call 052-426-8076 or write to idangal2426@gmail.com." }
+  he: { need: "נא למלא שם וטלפון או דוא״ל כדי שנוכל לחזור אליכם.", sending: "שולח...", okT: "הפרטים התקבלו, תודה!", okP: "אחזור אליכם בהקדם לתיאום שיחת ייעוץ." },
+  en: { need: "Please fill in your name and a phone or email so we can get back to you.", sending: "Sending...", okT: "Got your details, thank you!", okP: "I'll get back to you soon to set up a consultation call." }
 };
 var PKG = { page: "דף נחיתה מעוצב", bot: "דף נחיתה + צ'אטבוט AI", agent: "דף נחיתה + פתרון AI עסקי מתקדם", unsure: "עדיין לא בטוח/ה" };
 function setStatus(text, err){ var st = document.getElementById("status"); st.textContent = text; st.className = "status" + (err ? " err" : ""); }
+function showDone(){
+  var m = MSG[lang];
+  document.getElementById("form").innerHTML = '<div class="done" role="status"><svg aria-hidden="true" width="56" height="56" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M7.5 12.5l3 3 6-6.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>'+esc(m.okT)+'</h3><p>'+esc(m.okP)+'</p></div>';
+}
+/* The form posts natively to FormSubmit (no cross-origin fetch), which emails the lead and redirects back with ?sent=1 */
 function sendForm(e){
-  e.preventDefault();
-  var f = document.getElementById("form"), m = MSG[lang], btn = document.getElementById("send");
-  if(f._honey.value) return;
-  var name = f.name.value.trim(), phone = f.phone.value.trim(), email = f.email.value.trim();
-  if(!name || (!phone && !email)){ setStatus(m.need, true); return; }
-  var body = { _subject: "פנייה חדשה מדף הנחיתה: " + name, _template: "table", "שם": name, "שם העסק": f.biz.value.trim() || "-", "טלפון": phone || "-", "דוא״ל": email || "-", "מתעניין/ת ב": PKG[f.pkg.value] || "-" };
-  btn.disabled = true; setStatus(m.sending, false);
-  fetch("https://formsubmit.co/ajax/" + MAIL, { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify(body) })
-    .then(function(r){ return r.json().then(function(d){ return r.ok && (d.success === true || d.success === "true"); }); })
-    .then(function(ok){
-      if(!ok) throw new Error("rejected");
-      f.innerHTML = '<div class="done" role="status"><svg aria-hidden="true" width="56" height="56" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M7.5 12.5l3 3 6-6.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>'+esc(m.okT)+'</h3><p>'+esc(m.okP)+'</p></div>';
-    })
-    .catch(function(){ btn.disabled = false; setStatus(m.fail, true); });
+  var f = document.getElementById("form"), m = MSG[lang], el = f.elements;
+  if(el._honey.value){ e.preventDefault(); return; }
+  var name = el.name.value.trim(), phone = el.phone.value.trim(), email = el.email.value.trim();
+  if(!name || (!phone && !email)){ e.preventDefault(); setStatus(m.need, true); return; }
+  el.package.value = PKG[el.pkg.value] || "-";
+  el._subject.value = "פנייה חדשה מדף הנחיתה: " + name;
+  el._next.value = location.origin + location.pathname + "?sent=1#quote";
+  if(!email) el.email.disabled = true;
+  Array.prototype.forEach.call(f.querySelectorAll('input[name="pkg"]'), function(r){ r.disabled = true; });
+  setStatus(m.sending, false);
 }
 document.querySelectorAll("ul[data-ticks] li").forEach(function(li){
   var s = document.createElement("span");
@@ -519,6 +524,7 @@ document.addEventListener("click", function(e){
 document.getElementById("form").addEventListener("submit", sendForm);
 renderChat();
 try{ if(localStorage.getItem("athena-lang")==="en") setLang("en"); }catch(x){}
+if(/[?&]sent=1/.test(location.search)){ showDone(); try{ history.replaceState(null, "", location.pathname + "#quote"); }catch(x){} }
 </script>
 </body>
 </html>
