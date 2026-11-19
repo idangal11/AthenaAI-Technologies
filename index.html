@@ -13,6 +13,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;800;900&family=Heebo:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/fontawesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/brands.min.css">
 <style>
 :root{--bg:#0e1430;--bg2:#0a0f26;--card:#141b3c;--line:rgba(255,255,255,.12);--cy:#7df0ff;--vi:#b08cff;--mint:#5ff5dc;--tx:#fff;--mut:#b9c0d8;--ink:#0e1430;--grad:linear-gradient(90deg,var(--mint),var(--cy) 45%,var(--vi))}
 *{box-sizing:border-box}
@@ -194,11 +196,20 @@ details p{padding:0 20px 18px;font-size:15.5px;color:#e6e9f5;text-wrap:pretty}
 .opt input{accent-color:#d9601a;width:17px;height:17px;flex:none}
 .opt:has(input:checked){border-color:var(--ink);background:#e3f9fc}
 .note{font-size:12.5px;color:#5a6384;text-align:center}
+.status{font-size:15px;font-weight:700;text-align:center}
+.status:empty{display:none}
+.status.err{color:#b3261e}
+.status a{color:inherit}
+.done{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;padding-block:36px}
+.done svg{color:#0f9d58}
+.done h3{font-size:24px}
+.done p{color:#3a4266}
+.btn[disabled]{opacity:.6;cursor:progress;transform:none}
 
 /* footer */
 .ftr{border-top:1px solid var(--line);background:var(--bg2)}
 .ftr-in{display:flex;flex-wrap:wrap;gap:8px 28px;align-items:center;justify-content:center;padding-block:26px 92px;font-size:14px;color:var(--mut);text-align:center}
-.wa-float{position:fixed;bottom:20px;inset-inline-start:20px;z-index:30;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:var(--cy);color:var(--ink);box-shadow:0 12px 30px -8px rgba(0,0,0,.6);transition:transform .15s ease}
+.wa-float{position:fixed;bottom:20px;inset-inline-start:20px;z-index:30;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#25d366;color:#fff;font-size:34px;text-decoration:none;box-shadow:0 12px 30px -8px rgba(0,0,0,.6);transition:transform .15s ease}
 .wa-float:hover{transform:scale(1.07)}
 
 @keyframes pop{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:none}}
@@ -381,7 +392,7 @@ details p{padding:0 20px 18px;font-size:15.5px;color:#e6e9f5;text-wrap:pretty}
     <h2><span data-en="Let's build">בואו נבנה</span><br><span data-en="something exceptional.">משהו יוצא דופן.</span></h2>
     <p class="tagline"><span data-en="Precise design.">עיצוב מדויק.</span> <span data-en="Copy that sells.">תוכן שמוכר.</span> <span data-en="AI that works for you.">AI שעובד בשבילך.</span></p>
     <div class="reach">
-      <a href="https://wa.me/972524268076" target="_blank" rel="noopener"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 22 22" fill="none"><path d="M3.5 18.5l1.1-3.7A7.5 7.5 0 1111 18.5a7.4 7.4 0 01-3.6-.9l-3.9.9z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span dir="ltr">052-426-8076</span></a>
+      <a href="tel:+972524268076"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 22 22" fill="none"><path d="M6.5 3.5h3l1.2 4-2 1.4a10 10 0 004.4 4.4l1.4-2 4 1.2v3c0 1-.8 1.8-1.8 1.8C9.800 17.300 4.700 12.200 4.700 5.300c0-1 .8-1.8 1.8-1.8z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span dir="ltr">052-426-8076</span></a>
       <a href="mailto:idangal2426@gmail.com"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 22 22" fill="none"><rect x="3" y="5" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M4 7l7 5 7-5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span dir="ltr">idangal2426@gmail.com</span></a>
     </div>
   </div>
@@ -402,8 +413,10 @@ details p{padding:0 20px 18px;font-size:15.5px;color:#e6e9f5;text-wrap:pretty}
       <label class="opt"><span data-en="Landing page + advanced business AI solution">דף נחיתה + פתרון AI עסקי מתקדם</span><input type="radio" name="pkg" value="agent"></label>
       <label class="opt"><span data-en="Not sure yet what I need">עדיין לא בטוח/ה מה אני צריך/ה</span><input type="radio" name="pkg" value="unsure"></label>
     </fieldset>
-    <a class="btn cy full" id="send" target="_blank" rel="noopener" href="https://wa.me/972524268076"><span data-en="Book me a free first consultation call">קבעו לי שיחת ייעוץ ראשונית ללא עלות</span><span class="ar" aria-hidden="true">←</span></a>
-    <p class="note" data-en="Your details go straight to AthenaAI's WhatsApp.">הפרטים נשלחים ישירות לוואטסאפ של AthenaAI.</p>
+    <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;inset-inline-start:-9999px;width:1px;height:1px;opacity:0">
+    <button class="btn cy full" id="send" type="submit"><span id="sendLabel" data-en="Book me a free first consultation call">קבעו לי שיחת ייעוץ ראשונית ללא עלות</span><span class="ar" aria-hidden="true">←</span></button>
+    <p class="status" id="status" role="status" aria-live="polite"></p>
+    <p class="note" data-en="Your details are sent straight to us by email.">הפרטים נשלחים ישירות אלינו למייל.</p>
   </form>
 </div></section>
 
@@ -414,7 +427,7 @@ details p{padding:0 20px 18px;font-size:15.5px;color:#e6e9f5;text-wrap:pretty}
   <span dir="ltr">© 2026 AthenaAI Technologies</span>
 </div></footer>
 
-<a class="wa-float" href="https://wa.me/972524268076" target="_blank" rel="noopener" aria-label="דברו איתנו בוואטסאפ"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 22 22" fill="none"><path d="M3.5 18.5l1.1-3.7A7.5 7.5 0 1111 18.5a7.4 7.4 0 01-3.6-.9l-3.9.9z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></a>
+<a class="wa-float" href="https://wa.me/972524268076" target="_blank" rel="noopener" aria-label="דברו איתנו בוואטסאפ"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
 
 <script>
 var WA = "972524268076";
@@ -462,17 +475,29 @@ function setLang(l){
   try{ localStorage.setItem("athena-lang", l); }catch(x){}
   renderChat();
 }
-function waHref(){
-  var f = document.getElementById("form"), lines = ["היי, אשמח לשיחת ייעוץ על דף נחיתה."];
-  var names = { page: "דף נחיתה מעוצב", bot: "דף נחיתה + צ'אטבוט AI", agent: "דף נחיתה + פתרון AI עסקי מתקדם", unsure: "עדיין לא בטוח/ה" };
-  if(f.name.value.trim()) lines.push("שם: "+f.name.value.trim());
-  if(f.biz.value.trim()) lines.push("שם העסק: "+f.biz.value.trim());
-  if(f.phone.value.trim()) lines.push("טלפון: "+f.phone.value.trim());
-  if(f.email.value.trim()) lines.push("דוא״ל: "+f.email.value.trim());
-  if(f.pkg.value) lines.push("מתעניין/ת ב: "+names[f.pkg.value]);
-  return "https://wa.me/"+WA+"?text="+encodeURIComponent(lines.join("\n"));
+var MAIL = "idangal2426@gmail.com";
+var MSG = {
+  he: { need: "נא למלא שם וטלפון או דוא״ל כדי שנוכל לחזור אליכם.", sending: "שולח...", okT: "הפרטים התקבלו, תודה!", okP: "אחזור אליכם בהקדם לתיאום שיחת ייעוץ.", fail: "השליחה לא הצליחה. אפשר להתקשר ל-052-426-8076 או לכתוב ל-idangal2426@gmail.com." },
+  en: { need: "Please fill in your name and a phone or email so we can get back to you.", sending: "Sending...", okT: "Got your details, thank you!", okP: "I'll get back to you soon to set up a consultation call.", fail: "Sending failed. You can call 052-426-8076 or write to idangal2426@gmail.com." }
+};
+var PKG = { page: "דף נחיתה מעוצב", bot: "דף נחיתה + צ'אטבוט AI", agent: "דף נחיתה + פתרון AI עסקי מתקדם", unsure: "עדיין לא בטוח/ה" };
+function setStatus(text, err){ var st = document.getElementById("status"); st.textContent = text; st.className = "status" + (err ? " err" : ""); }
+function sendForm(e){
+  e.preventDefault();
+  var f = document.getElementById("form"), m = MSG[lang], btn = document.getElementById("send");
+  if(f._honey.value) return;
+  var name = f.name.value.trim(), phone = f.phone.value.trim(), email = f.email.value.trim();
+  if(!name || (!phone && !email)){ setStatus(m.need, true); return; }
+  var body = { _subject: "פנייה חדשה מדף הנחיתה: " + name, _template: "table", "שם": name, "שם העסק": f.biz.value.trim() || "-", "טלפון": phone || "-", "דוא״ל": email || "-", "מתעניין/ת ב": PKG[f.pkg.value] || "-" };
+  btn.disabled = true; setStatus(m.sending, false);
+  fetch("https://formsubmit.co/ajax/" + MAIL, { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify(body) })
+    .then(function(r){ return r.json().then(function(d){ return r.ok && (d.success === true || d.success === "true"); }); })
+    .then(function(ok){
+      if(!ok) throw new Error("rejected");
+      f.innerHTML = '<div class="done" role="status"><svg aria-hidden="true" width="56" height="56" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M7.5 12.5l3 3 6-6.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>'+esc(m.okT)+'</h3><p>'+esc(m.okP)+'</p></div>';
+    })
+    .catch(function(){ btn.disabled = false; setStatus(m.fail, true); });
 }
-function syncSend(){ document.getElementById("send").href = waHref(); }
 document.querySelectorAll("ul[data-ticks] li").forEach(function(li){
   var s = document.createElement("span");
   s.textContent = li.textContent;
@@ -488,13 +513,10 @@ document.addEventListener("click", function(e){
   if(el.hasAttribute("data-lang")){ if(el.getAttribute("data-lang")!==lang) setLang(el.getAttribute("data-lang")); }
   else if(el.hasAttribute("data-ask")){ asked.push(el.getAttribute("data-ask")); renderChat(); }
   else if(el.hasAttribute("data-reset")){ asked = []; renderChat(); }
-  else if(el.hasAttribute("data-pick")){ var r = document.querySelector('#form input[name="pkg"][value="'+el.getAttribute("data-pick")+'"]'); if(r){ r.checked = true; syncSend(); } }
+  else if(el.hasAttribute("data-pick")){ var r = document.querySelector('#form input[name="pkg"][value="'+el.getAttribute("data-pick")+'"]'); if(r) r.checked = true; }
 });
-document.getElementById("form").addEventListener("input", syncSend);
-document.getElementById("form").addEventListener("change", syncSend);
-document.getElementById("form").addEventListener("submit", function(e){ e.preventDefault(); window.open(waHref(), "_blank", "noopener"); });
+document.getElementById("form").addEventListener("submit", sendForm);
 renderChat();
-syncSend();
 try{ if(localStorage.getItem("athena-lang")==="en") setLang("en"); }catch(x){}
 </script>
 </body>
