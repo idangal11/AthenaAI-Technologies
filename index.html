@@ -8,208 +8,309 @@
 <meta property="og:title" content="AthenaAI Technologies | דף נחיתה עם מזכירה דיגיטלית לעסק">
 <meta property="og:description" content="דף נחיתה מקצועי ומותאם למותג, עם סוכן AI שעונה לכל פנייה, אוסף פרטים ומתאם פגישות 24/7.">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#0e1430">
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2038%2038%22%3E%3Crect%20width%3D%2238%22%20height%3D%2238%22%20rx%3D%229%22%20fill%3D%22%230e1430%22%2F%3E%3Cpath%20d%3D%22M10%2028%20L19%209%20L28%2028%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%222.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20fill%3D%22none%22%2F%3E%3Ccircle%20cx%3D%2219%22%20cy%3D%2222%22%20r%3D%222.6%22%20fill%3D%22%237df0ff%22%2F%3E%3C%2Fsvg%3E">
+<meta property="og:image" content="https://idangal11.github.io/AthenaAI-Technologies/assets/hero.png">
+<meta name="theme-color" content="#0e1630">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2038%2038%22%3E%3Crect%20width%3D%2238%22%20height%3D%2238%22%20rx%3D%229%22%20fill%3D%22%230e1630%22%2F%3E%3Cpath%20d%3D%22M10%2028%20L19%209%20L28%2028%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%222.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20fill%3D%22none%22%2F%3E%3Ccircle%20cx%3D%2219%22%20cy%3D%2222%22%20r%3D%222.6%22%20fill%3D%22%2380f0ff%22%2F%3E%3C%2Fsvg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;800;900&family=Heebo:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&family=Heebo:wght@400;500;600;700&family=Inter:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/fontawesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/brands.min.css">
 <style>
-:root{--bg:#0e1430;--bg2:#0a0f26;--card:#141b3c;--line:rgba(255,255,255,.12);--cy:#7df0ff;--vi:#b08cff;--mint:#5ff5dc;--tx:#fff;--mut:#b9c0d8;--ink:#0e1430;--grad:linear-gradient(90deg,var(--mint),var(--cy) 45%,var(--vi))}
+:root{
+  --navy:#0e1630;--navy2:#111a32;--cy:#80f0ff;--ice:#c0f8ff;--tx:#fff;--mut:#b0bbd2;--soft:#e0e5ed;--line:#243046;
+  --grad:linear-gradient(90deg,#42f5dd 0%,#73c6ff 50%,#a17bff 100%);
+  --radial:radial-gradient(60% 45% at 54% 50%,#182f53 0%,#171a3a 65%,#0e1630 100%);
+  --wrap:1312px;
+}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--tx);font-family:Heebo,'Segoe UI',Arial,sans-serif;line-height:1.6;overflow-x:hidden}
-h1,h2,h3,p,ul,ol{margin:0}
+body{margin:0;background:var(--navy);color:var(--tx);font-family:Rubik,Heebo,'Segoe UI',Arial,sans-serif;line-height:1.45;overflow-x:hidden}
+h1,h2,h3,h4,p,ul,ol{margin:0}
 ul,ol{padding:0;list-style:none}
 a{color:inherit}
-h1,h2,h3{font-family:Rubik,Heebo,sans-serif;text-wrap:balance}
+h1,h2,h3{text-wrap:balance}
+img{max-width:100%;height:auto;display:block}
 :focus-visible{outline:3px solid var(--cy);outline-offset:3px}
 .light :focus-visible,.form :focus-visible{outline-color:#1d4ed8}
-.skip{position:absolute;inset-inline-start:12px;top:-60px;background:var(--cy);color:var(--ink);padding:10px 16px;border-radius:8px;font-weight:700;z-index:50;text-decoration:none}
+.skip{position:absolute;inset-inline-start:12px;top:-60px;background:var(--cy);color:var(--navy);padding:10px 16px;border-radius:8px;font-weight:700;z-index:50;text-decoration:none}
 .skip:focus{top:12px}
-.wrap{max-width:1180px;margin:0 auto;padding-inline:24px}
-section>.wrap{padding-block:clamp(56px,7vw,104px)}
-.glow{background:radial-gradient(60% 55% at 50% 40%,rgba(60,110,220,.22),transparent 70%)}
+.wrap{width:100%;max-width:calc(var(--wrap) + 2*24px);margin-inline:auto;padding-inline:24px}
+.cy-t{color:var(--cy)}
+section{position:relative;scroll-margin-top:96px}
 
 /* buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:8px 28px;border-radius:999px;font:700 17px Rubik,Heebo,sans-serif;text-align:center;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .15s ease,background .15s ease}
-.btn:hover{transform:translateY(-2px)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:8px 32px;border-radius:100px;font:500 20px/1.2 Heebo,Rubik,sans-serif;text-align:center;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .15s ease,filter .15s ease}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.05)}
 .btn .ar{font-family:Arial,sans-serif}
-[dir="ltr"] .btn .ar{transform:scaleX(-1)}
-.btn.grad{background:var(--grad);color:var(--ink);box-shadow:0 8px 30px -8px rgba(125,240,255,.6)}
-.btn.cy{background:var(--cy);color:var(--ink);box-shadow:0 8px 30px -8px rgba(125,240,255,.7)}
-.btn.dark{background:#1a2142;color:#fff;border-color:var(--line)}
-.btn.dark:hover{background:#232b55}
-.btn.line{border-color:var(--cy);color:#fff;background:rgba(10,15,38,.6)}
-.btn.sm{min-height:46px;padding:6px 22px;font-size:15.5px}
-.btn.full{width:100%;min-height:56px}
+.btn.cy{background:var(--cy);color:var(--navy);box-shadow:0 7px 22px rgba(255,255,255,.2)}
+.btn.grad{background:var(--grad);color:var(--navy);box-shadow:0 7px 22px rgba(67,133,255,.2)}
+.btn.dark{background:#162036;color:#fff}
+.btn.full{width:100%}
+
+/* tilted highlight chips */
+.tilt{display:inline-flex;align-items:center;justify-content:center;padding:10px 24px;border-radius:15px;background:var(--cy);color:var(--navy);font:700 clamp(28px,3.2vw,45px)/1.45 Rubik,sans-serif;transform:rotate(-1.63deg);white-space:nowrap}
+.tilt.grad{background:var(--grad);border-radius:18px;padding:0 24px;font-size:clamp(20px,2.4vw,34px);transform:rotate(-3.87deg)}
 
 /* header */
-.hdr{position:sticky;top:0;z-index:20;background:rgba(14,20,48,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.hdr-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-.logo-t{display:flex;flex-direction:column;line-height:1.1}
-.logo-t b{font:800 19px Rubik,sans-serif;letter-spacing:.04em}
-.logo-t i{font-style:normal;color:var(--cy)}
-.logo-t small{font-size:9.5px;letter-spacing:.3em;color:var(--mut)}
-.nav{display:flex;gap:clamp(16px,2.2vw,34px);font-size:15.5px;font-weight:500}
-.nav a{color:#dfe4f5;text-decoration:none;padding-block:10px;white-space:nowrap}
+.hdr{position:sticky;top:0;z-index:20;background:var(--navy)}
+.hdr-in{position:relative;display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:96px}
+.hdr-in::after{content:"";position:absolute;inset-inline:24px;bottom:0;height:1px;background:var(--line)}
+.logo{display:flex;align-items:center;gap:6px;text-decoration:none;flex:none}
+.logo svg{width:56px;height:56px}
+.logo-t{display:flex;flex-direction:column;font-family:Inter,sans-serif;line-height:1.1}
+.logo-t b{font-weight:700;font-size:21.6px;color:#fff}
+.logo-t b i{font-style:normal;color:var(--cy)}
+.logo-t small{font-size:10.4px;color:var(--mut);letter-spacing:.38em;margin-top:3px}
+.nav{display:flex;gap:23px;font:400 14px/1.45 Heebo,sans-serif;margin-inline-start:auto;margin-inline-end:auto}
+.nav a{color:#fff;text-decoration:none;padding-block:10px;white-space:nowrap;min-width:108px;text-align:center}
 .nav a:hover{color:var(--cy)}
-.hdr-act{display:flex;align-items:center;gap:12px}
-.lang{display:flex;padding:3px;gap:2px;border:1px solid var(--line);border-radius:999px}
-.lang button{min-width:44px;min-height:38px;border:0;border-radius:999px;font:600 14px Heebo,sans-serif;cursor:pointer;background:transparent;color:var(--mut)}
-.lang button[aria-pressed="true"]{background:var(--cy);color:var(--ink)}
-@media (max-width:1100px){.nav{display:none}}
-.hdr-act .btn{white-space:nowrap}
-@media (max-width:560px){.hdr-act .btn{display:none}}
+.hdr-act{display:flex;align-items:center;gap:14px}
+.hdr-act .btn{min-height:54px;padding-inline:30px;white-space:nowrap}
+.lang{display:flex;border:1px solid var(--line);border-radius:100px;padding:3px}
+.lang button{min-width:40px;min-height:34px;border:0;border-radius:100px;font:600 13px Heebo,sans-serif;cursor:pointer;background:transparent;color:var(--mut)}
+.lang button[aria-pressed="true"]{background:#1d2a40;color:#fff}
+@media (max-width:1180px){.nav{display:none}}
+@media (max-width:600px){.hdr-in{min-height:72px}.hdr-act .btn{display:none}.logo svg{width:44px;height:44px}.logo-t b{font-size:18px}.logo-t small{font-size:9px}}
 
 /* hero */
-.hero{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(440px,100%),1fr));gap:clamp(32px,5vw,64px);align-items:center}
-.hero-copy{display:flex;flex-direction:column;gap:26px;align-items:flex-start}
-h1{font-size:clamp(40px,5.6vw,72px);font-weight:900;line-height:1.12}
-h1 em,h2 em{font-style:normal;color:var(--cy)}
-.lead{font-size:clamp(17px,1.6vw,21px);font-weight:500;max-width:30em;text-wrap:pretty}
-.cta-row{display:flex;flex-wrap:wrap;gap:14px}
-.art{position:relative;min-height:400px;display:grid;place-items:center}
-.art img.photo{position:absolute;inset:0;margin:auto;z-index:1;max-width:100%;max-height:100%;object-fit:contain}
-.art-fallback{width:min(100%,420px);aspect-ratio:1/1;border-radius:50%;background:radial-gradient(circle at 50% 45%,rgba(125,240,255,.28),rgba(60,110,220,.12) 55%,transparent 72%)}
-.badge247{position:absolute;z-index:2;inset-inline-end:2%;top:14%;width:112px;height:112px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#3d7bff,#1438c4);border:5px solid #2b62ef;font:900 30px Rubik,sans-serif;box-shadow:0 14px 40px -10px rgba(40,90,255,.8)}
-.notify{position:absolute;z-index:2;inset-inline-start:4%;bottom:26%;background:#eef2ff;color:var(--ink);border-radius:16px;padding:12px 18px 14px;transform:rotate(-4deg);box-shadow:0 20px 50px -14px rgba(0,0,0,.7);min-width:230px}
-.notify small{display:block;font-size:11px;color:#5a6384}
-.notify b{display:flex;align-items:center;gap:8px;font:800 20px Rubik,sans-serif}
-.notify b::before{content:"";width:11px;height:11px;border-radius:50%;background:#19b8d6;flex:none}
-.notify span{font-size:15px}
-@media (max-width:520px){.badge247{width:84px;height:84px;font-size:22px}.art{min-height:340px}}
+.hero{background:radial-gradient(62.6% 45.5% at 54% 52.7%,#153f60 0%,#171c3e 48%,#0e1630 100%);overflow:hidden}
+.hero .wrap{position:relative;min-height:712px;display:flex}
+.hero-copy{position:relative;z-index:2;width:min(780px,56%);padding-top:126px;padding-bottom:90px}
+h1{font:900 clamp(40px,4.2vw,60px)/1.32 Rubik,sans-serif;color:#fff}
+h1 .cy-t{display:block;line-height:1.35}
+.lead{margin-top:20px;font:700 clamp(18px,1.67vw,24px)/1.45 Rubik,sans-serif;max-width:687px;text-wrap:pretty}
+.cta-row{display:flex;flex-wrap:wrap;gap:22px;margin-top:76px}
+.hero-art{position:absolute;z-index:1;top:76px;inset-inline-start:auto;left:calc(50% - 754px);width:886px;pointer-events:none}
+@media (max-width:1440px){.hero-art{left:-2.4vw;width:61.5vw}}
+@media (max-width:900px){
+  .hero .wrap{flex-direction:column;min-height:0}
+  .hero-copy{width:100%;padding-top:48px;padding-bottom:0}
+  .cta-row{margin-top:32px}
+  .hero-art{position:relative;top:auto;left:auto;width:min(560px,100%);margin:24px auto 0}
+}
+@media (max-width:600px){.cta-row .btn{width:100%;font-size:17px;padding-inline:18px}.tilt{white-space:normal;text-align:center}.why .tilt.grad{margin-inline-start:0;padding-block:4px}.btn{font-size:17px}}
+main{overflow-x:clip}
 
-/* value */
-.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(400px,100%),1fr));gap:clamp(32px,5vw,72px);align-items:center}
-.stack{display:flex;flex-direction:column;gap:20px;align-items:flex-start}
-h2{font-size:clamp(30px,3.8vw,48px);font-weight:800;line-height:1.15}
-h2.sm{font-size:clamp(24px,2.8vw,34px);font-weight:700}
-.tilt{display:inline-block;padding:6px 22px 8px;border-radius:14px;background:var(--cy);color:var(--ink);transform:rotate(-2deg);font:800 clamp(22px,3vw,38px)/1.25 Rubik,sans-serif}
-.tilt.grad{background:var(--grad);font-size:clamp(20px,2.4vw,30px)}
-.gives h3{font-size:19px;margin-bottom:12px}
-.gives ul{display:flex;flex-direction:column;gap:14px}
-.gives li{display:grid;grid-template-columns:22px 1fr;gap:2px 10px}
-.gives li svg{color:var(--cy);margin-top:5px}
-.gives li b{font:700 17px Rubik,sans-serif}
-.gives li span{grid-column:2;font-size:15px;color:var(--mut)}
+/* why / digital secretary */
+.why{background:var(--radial);padding-block:122px 110px}
+.why .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,502px);gap:64px;align-items:start}
+.why .stack{display:flex;flex-direction:column;align-items:flex-start;padding-inline-start:46px}
+.why h2{font:700 clamp(24px,2.4vw,34px)/1.45 Rubik,sans-serif}
+.why .tilt.grad{margin-top:4px;margin-inline-start:-6px}
+.gives{margin-top:48px;width:100%;max-width:532px}
+.gives h3{font:700 20px/1.2 Rubik,sans-serif;margin-bottom:12px}
+.gives li{display:grid;grid-template-columns:23px 1fr;column-gap:0;margin-bottom:10px}
+.gives li .tk{grid-row:span 2;color:var(--cy);font:700 17px/1.45 Rubik,sans-serif}
+.gives li b{font:700 17px/1.45 Heebo,sans-serif;color:#fffdf9}
+.gives li span:not(.tk){grid-column:2;font:400 14px/1.45 Heebo,sans-serif;color:#bbb5ca}
+.why .btn.dark{margin-top:40px;min-height:58px;padding-inline:12px;min-width:223px;font-size:16px}
 
-/* chat */
-.chat{background:#101735;border:1px solid rgba(125,240,255,.35);border-radius:22px;box-shadow:0 0 70px -20px rgba(80,130,255,.7);overflow:hidden;width:100%}
-.chat-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 22px;border-bottom:1px solid var(--line)}
-.chat-head b{display:block;font:700 17px Rubik,sans-serif}
-.chat-head small{display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--mut)}
-.chat-head small::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--cy)}
-.chat-head .tag{font-size:11px;letter-spacing:.1em;color:var(--mut)}
-.chat-log{display:flex;flex-direction:column;gap:12px;padding:22px;min-height:290px}
-.msg{max-width:84%;padding:11px 16px;border-radius:14px;font-size:15.5px;line-height:1.55;animation:pop .35s ease both}
-.msg small{display:block;font-size:11px;font-weight:700;margin-bottom:2px;opacity:.75}
-.msg.user{align-self:flex-start;background:#c9f8ff;color:var(--ink)}
-.msg.bot{align-self:flex-end;background:#16404f;color:#eafcff}
-.chips{display:flex;flex-wrap:wrap;gap:8px;padding:0 22px 22px}
-.chip{min-height:44px;padding:0 16px;border-radius:999px;border:1px solid rgba(125,240,255,.55);background:transparent;color:#d8fbff;font:500 14.5px Heebo,sans-serif;cursor:pointer;transition:background .15s ease,color .15s ease}
-.chip:hover{background:var(--cy);color:var(--ink)}
-.chip.quiet{border-color:var(--line);color:var(--mut)}
+/* chat workspace */
+.chat{background:#111a32;border:.8px solid #46699c;border-radius:17.6px;box-shadow:0 16px 56px rgba(74,88,217,.25);overflow:hidden;display:flex;flex-direction:column;min-height:626px}
+.chat-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;background:#19294c;min-height:67px;padding:13px 19px}
+.chat-head b{display:block;font:700 16px/1.45 Rubik,sans-serif}
+.chat-head small{display:block;font:400 11px/1.45 Rubik,sans-serif;color:var(--cy)}
+.chat-head .tag{font:500 10px/1.45 Rubik,sans-serif;color:#bcc8df;letter-spacing:.02em}
+#chat{flex:1;display:flex;flex-direction:column;padding:22px 40px 22px 40px}
+.chat-log{flex:1;display:flex;flex-direction:column;gap:14px;max-height:400px;overflow-y:auto;padding-inline:2px;scrollbar-width:thin;scrollbar-color:#2a3a5c transparent}
+.msg{max-width:358px;width:80%;padding:8px 13px 12px;border-radius:11.2px;font:400 13.5px/1.45 Rubik,sans-serif;animation:pop .35s ease both}
+.msg small{display:block;font:500 10px/1.45 Rubik,sans-serif;margin-bottom:4px}
+.msg.user{align-self:flex-start;background:var(--ice);color:var(--navy)}
+.msg.bot{align-self:flex-end;background:#16364a;color:#fff}
+.msg.bot small{color:var(--cy)}
+.handoff{margin-top:18px;background:#152a45;border:.8px solid #3c4f65;border-radius:9.6px;padding:10px 14px}
+.handoff b{display:block;font:500 14px/1.45 Rubik,sans-serif}
+.handoff span{display:block;font:400 11px/1.45 Rubik,sans-serif;color:#adbbd3}
+.chips{margin-top:22px;background:#0a1020;border-radius:9.6px;padding:10px;display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:40px;padding:0 14px;border-radius:100px;border:1px solid rgba(128,240,255,.5);background:transparent;color:#d8fbff;font:400 13.5px Rubik,sans-serif;cursor:pointer;transition:background .15s ease,color .15s ease}
+.chip:hover{background:var(--cy);color:var(--navy)}
+.chip.quiet{border-color:#3c4f65;color:#9da9c2}
+.chips .btn{min-height:40px;font-size:14px;padding-inline:18px}
+@media (max-width:1000px){
+  .why{padding-block:72px}
+  .why .wrap{grid-template-columns:1fr;gap:48px}
+  .why .stack{padding-inline-start:0}
+  .chat{min-height:0}
+  #chat{padding:18px}
+  .msg{width:88%}
+}
 
-/* compare */
-.head{display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center;margin-bottom:44px}
-.cmp-wrap{overflow-x:auto;border-radius:20px;border:1px solid var(--line);background:var(--card)}
-.cmp{width:100%;min-width:640px;border-collapse:collapse;font-size:15.5px;text-align:start}
-.cmp th,.cmp td{padding:17px 22px;text-align:start;vertical-align:top}
-.cmp thead th{font:700 16px Rubik,sans-serif}
-.cmp tbody tr>*{border-top:1px solid var(--line)}
-.cmp tbody th{font-weight:700}
-.cmp tbody td{color:var(--mut)}
-.cmp .us{background:linear-gradient(90deg,rgba(125,240,255,.07),rgba(176,140,255,.16));color:#fff!important;font-weight:700}
-.cmp thead .us{color:var(--cy)!important;border-top:2px solid var(--cy)}
-.after{display:flex;justify-content:center;margin-top:40px}
+/* comparison */
+.compare{background:var(--navy);padding-block:14px 14px}
+.head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px}
+.head h2{font:700 clamp(28px,3.2vw,45px)/1.45 Rubik,sans-serif}
+.cmp-wrap{margin-top:64px;border:1px solid #2a3751;border-radius:20px;background:#111c36;box-shadow:0 4px 4px rgba(255,255,255,.25);overflow-x:auto}
+.cmp{width:100%;min-width:760px;border-collapse:collapse;text-align:start}
+.cmp th,.cmp td{text-align:start;padding:19px 24px 20px;vertical-align:top}
+.cmp thead th{font:500 22px/1.45 Rubik,sans-serif;color:#fff;padding-block:20px 18px}
+.cmp thead th.us{font-weight:700;color:var(--cy)}
+.cmp tbody tr{background-image:linear-gradient(rgba(48,64,91,.7),rgba(48,64,91,.7));background-size:calc(100% - 48px) 1px;background-position:top center;background-repeat:no-repeat}
+.cmp tbody th{font:500 18px/1.45 Rubik,sans-serif;color:#e3e9f5;width:316px}
+.cmp tbody td{font:400 18px/1.45 Rubik,sans-serif;color:#fff;width:460px}
+.cmp tbody td.us{font:500 19px/1.45 Rubik,sans-serif;color:#f1f7ff}
+.cmp .us{width:496px;background:linear-gradient(113deg,rgba(16,45,69,.5) 0%,rgba(66,22,22,.5) 40%,rgba(77,43,32,.5) 77%)}
+.cmp thead th.us{position:relative}
+.cmp thead th.us::before{content:"";position:absolute;inset-inline:0;top:0;height:3px;background:var(--grad)}
+.after{display:flex;justify-content:center;margin-top:65px}
+.after .btn{font-size:22px;padding-inline:20px;min-width:min(489px,100%)}
+@media (max-width:700px){
+  .cmp-wrap{overflow:visible}
+  .cmp{min-width:0}
+  .cmp thead{display:none}
+  .cmp,.cmp tbody,.cmp tr,.cmp th,.cmp td{display:block;width:auto}
+  .cmp tbody tr{padding:6px 0 10px;background-size:calc(100% - 32px) 1px}
+  .cmp tbody tr:first-child{background:none}
+  .cmp th,.cmp td{padding:6px 16px}
+  .cmp tbody th{font-size:19px;font-weight:700;color:#fff;padding-top:14px}
+  .cmp tbody td::before{content:attr(data-l);display:block;font:500 13px/1.45 Rubik,sans-serif;color:var(--mut)}
+  html[lang=en] .cmp tbody td::before{content:attr(data-l-en)}
+  .cmp tbody td.us{width:auto;margin:4px 12px 0;border-radius:12px;padding:10px 14px;border-top:3px solid #73c6ff}
+  .cmp tbody td.us::before{color:var(--cy)}
+}
+@media (max-width:600px){.after .btn{font-size:18px}.cmp-wrap{margin-top:40px}}
 
-/* steps */
-.light{background:#f3f5fa;color:var(--ink)}
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:22px}
-.steps li{display:flex;flex-direction:column;gap:10px;padding:26px 24px 30px;border-radius:18px;background:#fff;border-bottom:4px solid var(--ink);box-shadow:0 14px 34px -22px rgba(14,20,48,.5)}
-.steps li:nth-child(1){background:var(--ink);color:#fff}
-.steps li:nth-child(3){background:#c4f8ff}
-.steps .num{font:500 34px/1 Rubik,sans-serif}
+/* process (light) */
+.light{background:#f4f5f8;color:#070a18;padding-block:120px 70px;overflow:hidden}
+.light .wrap{position:relative}
+.light .head h2{font-size:clamp(28px,3.1vw,44px);color:#070a18}
+.light .tilt{transform:rotate(-3.76deg)}
+.laptop{position:absolute;top:-39px;left:calc(100% - 64px);width:395px;max-width:none;pointer-events:none}
+.steps{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;margin-top:58px;padding-inline:58px 40px}
+.steps li{border-radius:22px;box-shadow:0 12px 30px rgba(20,10,41,.13);padding:13px 24px 22px;min-height:213px;display:flex;flex-direction:column;gap:9px;text-align:start}
+.steps .num{font:500 45px/1.45 Inter,sans-serif;color:#001155}
+.steps h3{font:700 23px/1.45 Rubik,sans-serif;color:#141321}
+.steps p{font:400 18px/1.45 Rubik,sans-serif;color:#000;text-wrap:pretty}
+.steps li:nth-child(1){background:var(--navy);border-top:5px solid #000;border-inline-start:3px solid #000}
 .steps li:nth-child(1) .num{color:var(--cy)}
-.steps h3{font-size:20px;font-weight:700}
-.steps p{font-size:15.5px;text-wrap:pretty}
+.steps li:nth-child(1) h3,.steps li:nth-child(1) p{color:#fff}
+.steps li:nth-child(2){background:#fff}
+.steps li:nth-child(3){background:#bff7ff;border-bottom:3px solid #000;border-inline-end:5px solid #000}
+@media (max-width:1440px){.laptop{left:auto;right:-24px;width:min(395px,27.5vw)}}
+@media (max-width:1000px){
+  .light{padding-block:72px 64px}
+  .laptop{position:relative;right:auto;top:auto;width:min(395px,86%);margin:0 auto 12px}
+  .steps{grid-template-columns:1fr;padding-inline:0;gap:16px;margin-top:40px}
+  .steps li{min-height:0}
+}
 
-/* packages */
-.pk-sub{max-width:36em;color:#dfe4f5}
-.pkgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(310px,100%),1fr));gap:24px;align-items:stretch;margin-top:20px}
-.pkg{position:relative;display:flex;flex-direction:column;gap:16px;padding:26px 26px 28px;border-radius:20px;background:var(--card);border:1px solid var(--line)}
-.pkg.agent{border-color:rgba(125,240,255,.6)}
-.pkg.pop{background:linear-gradient(100deg,#3a2a26,#1f3340 55%,#162447);border-color:rgba(125,240,255,.45);box-shadow:0 0 60px -18px rgba(90,150,255,.8)}
-.pkg .ribbon{position:absolute;top:-17px;inset-inline:0;margin-inline:auto;width:max-content;padding:6px 26px;border-radius:10px;background:var(--cy);color:var(--ink);font:700 14px Rubik,sans-serif}
-.pkg .tier{font-size:14px;color:var(--mut)}
-.pkg.pop .tier{color:#c9b3ff}
-.price{display:flex;align-items:baseline;justify-content:space-between;gap:10px;font:800 clamp(48px,5vw,64px)/1 Rubik,sans-serif}
-.price i{font:500 26px Rubik,sans-serif;color:var(--mut)}
-.monthly{font-size:14.5px;color:#dfe4f5;min-height:2.9em}
-.pkg h3{font-size:22px;font-weight:700;line-height:1.25}
-.pkg .for{font-size:15px;color:var(--mut);min-height:3em}
-.pkg hr{width:100%;border:0;border-top:1px solid var(--line);margin:4px 0}
-.pkg h4{margin:0;font:700 15.5px Rubik,sans-serif}
-.pkg ul{display:flex;flex-direction:column;gap:13px;font-size:15.5px;flex-grow:1;margin-bottom:10px}
-.pkg li{display:flex;gap:12px;align-items:flex-start}
-.pkg li svg{flex:none;margin-top:4px;color:var(--cy)}
-.fine{margin-top:30px;text-align:center;font-size:14.5px;color:var(--mut)}
+/* pricing */
+.pricing{background:var(--navy);padding-block:112px 72px}
+.pricing .head h2{font-size:clamp(28px,3.1vw,44px)}
+.pk-sub{font:400 18px/1.45 Rubik,sans-serif;max-width:640px;margin-top:20px;text-wrap:balance}
+.pkgs{display:grid;grid-template-columns:repeat(3,minmax(0,420px));justify-content:center;gap:26px;margin-top:75px;align-items:stretch}
+.pkg{position:relative;display:flex;flex-direction:column;background:var(--navy2);border:1px solid #354a70;border-radius:18px;padding:26px 27px 31px;min-height:732px}
+.pkg .tier{font:500 14px/1.45 Rubik,sans-serif;color:var(--mut)}
+.price{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:17px;font:700 61px/1.45 Rubik,sans-serif;height:75px}
+.price i{font:400 29px/1.45 Rubik,sans-serif;color:var(--mut);font-style:normal;margin-inline-end:8px}
+.monthly{font:400 15px/1.45 Rubik,sans-serif;color:var(--soft);min-height:22px}
+.pkg h3{margin-top:11px;font:700 24px/1.45 Rubik,sans-serif}
+.pkg .for{margin-top:6px;font:400 16px/1.45 Rubik,sans-serif;min-height:46px}
+.pkg hr{border:0;height:1px;background:#354a70;margin:30px 0 23px;width:100%}
+.pkg h4{font:700 15px/1.45 Rubik,sans-serif}
+.pkg ul{display:flex;flex-direction:column;gap:18px;margin-top:22px;margin-bottom:26px;flex-grow:1}
+.pkg li{display:flex;gap:19px;font:400 15px/1.45 Rubik,sans-serif;color:var(--soft)}
+.pkg li::before{content:"✓";flex:none;width:28px;font:700 16px/1.45 Rubik,sans-serif;color:var(--cy)}
+.pkg .btn{min-height:56px;font:500 20px/1.2 Rubik,sans-serif;width:100%}
+.pkg .btn.plain{background:#1d2a40;border-color:#43506a;color:#fff}
+.pkg.pop{border-color:var(--cy);background:linear-gradient(100.8deg,#284d63 0%,#063339 83%);filter:drop-shadow(0 10px 25px rgba(67,133,255,.16));border-top-left-radius:0;border-top-right-radius:0}
+.pkg.pop .tier{color:var(--cy)}
+.pkg.pop hr{background:#466039}
+.pkg.pop ul{gap:24px}
+.pkg.pop li::before{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.pkg.pop .btn{background:var(--navy);border-color:#42f5dd;color:var(--cy);box-shadow:0 7px 22px rgba(67,133,255,.2)}
+.pkg.agent ul{gap:24px}
+.ribbon{position:absolute;inset-inline:-1px;top:-36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:9px 9px 0 0;background:var(--cy);color:#080b19;font:700 14px/1.45 Rubik,sans-serif;box-shadow:0 7px 22px rgba(67,133,255,.2)}
+.robot{position:absolute;top:-94px;left:-26px;width:145px;height:116px;object-fit:contain;object-position:bottom;pointer-events:none;z-index:2}
+.fine{margin-top:30px;text-align:center;font:400 14px/1.45 Rubik,sans-serif;color:var(--mut)}
+@media (max-width:1340px){.pkgs{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.pkg{padding-inline:20px}.price{font-size:52px}}
+@media (max-width:1000px){
+  .pricing{padding-block:72px 56px}
+  .pkgs{grid-template-columns:minmax(0,440px);gap:72px;margin-top:96px}
+  .pkg{min-height:0}
+  .pkg.pop{order:-1}
+  .pkg .for{min-height:0}
+}
 
-/* founder */
-.who{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:28px;max-width:900px}
-.avatar{flex:none;width:132px;height:132px;border-radius:50%;border:4px solid #fff;background:#2a3566;display:grid;place-items:center;font:800 40px Rubik,sans-serif;overflow:hidden}
+/* about */
+.about{background:radial-gradient(60% 50% at 54% 50%,#182f53 0%,#171a3a 65%,#0e1630 100%);padding-block:102px 69px}
+.who{display:flex;align-items:center;gap:74px;max-width:1240px;margin-inline:auto}
+.avatar{flex:none;width:181px;height:174px;border-radius:100px;overflow:hidden;background:#2a3566;display:grid;place-items:center;font:800 40px Rubik,sans-serif;order:-1}
 .avatar img{width:100%;height:100%;object-fit:cover}
-.who .t{flex:1 1 340px;display:flex;flex-direction:column;gap:10px}
-.who p{color:var(--mut);text-wrap:pretty}
-.who .sign{color:#fff;font-weight:700;font-size:15px}
+.who .t{flex:1;max-width:985px}
+.who h2{font:700 clamp(30px,3.1vw,44px)/1.45 Rubik,sans-serif}
+.who p{margin-top:9px;max-width:652px;font:300 16px/1.45 Rubik,sans-serif}
+.who .sign{margin-top:23px;font-weight:700}
+@media (max-width:700px){.who{flex-direction:column;text-align:center;gap:28px}.who p{margin-inline:auto}.about{padding-block:64px}}
+
+/* testimonials */
+.reviews{background:var(--navy);padding-block:230px 40px}
+.revs{display:grid;grid-template-columns:repeat(3,minmax(0,415px));justify-content:center;gap:25px;margin-top:35px}
+.revs figure{margin:0;border-radius:22px;box-shadow:0 12px 30px rgba(20,10,41,.13);padding:24px;min-height:340px;display:flex;flex-direction:column;justify-content:center;gap:24px}
+.revs blockquote{margin:0;font:400 18px/1.45 Rubik,sans-serif}
+.revs figcaption b{display:block;font:700 23px/1.45 Rubik,sans-serif}
+.revs figcaption span{font:500 18px/1.45 Rubik,sans-serif}
+.revs figure:nth-child(1){background:#13204a;color:#fff}
+.revs figure:nth-child(2){background:#fff;color:#000}
+.revs figure:nth-child(3){background:var(--ice);color:#000}
+.revs figure:nth-child(n+2) figcaption{color:var(--navy)}
+@media (max-width:1000px){.revs{grid-template-columns:minmax(0,480px)}.reviews{padding-block:72px 24px}.revs figure{min-height:0}}
 
 /* faq */
-.faq-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(360px,100%),1fr));gap:clamp(28px,5vw,64px);align-items:start}
-.faq-grid h2{font-size:clamp(36px,4.6vw,60px);font-weight:900}
+.faq-sec{background:var(--navy);padding-block:150px 85px}
+.reviews:not([hidden])+.faq-sec{padding-top:287px}
+.faq-grid{display:grid;grid-template-columns:425px minmax(0,808px);justify-content:space-between;gap:24px;align-items:start}
+.faq-grid h2{font:900 clamp(44px,5vw,72px)/1.3 Rubik,sans-serif;margin-top:-22px}
 .faq{display:flex;flex-direction:column;gap:12px}
-details{border:1px solid rgba(255,255,255,.35);border-radius:12px;background:linear-gradient(90deg,rgba(90,62,40,.75),rgba(64,48,44,.75))}
-summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px;padding:12px 20px;font:700 17px Rubik,sans-serif}
+details{background:#453025;border:1px solid #fff;border-radius:12px;overflow:hidden}
+summary{list-style:none;cursor:pointer;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;min-height:70px;padding:17px 24px 16px 12px;font:700 20px/1.45 Rubik,sans-serif}
 summary::-webkit-details-marker{display:none}
-summary i{font:500 12px Rubik,sans-serif;color:#ffb37a}
-details p{padding:0 20px 18px;font-size:15.5px;color:#e6e9f5;text-wrap:pretty}
+summary i{font:500 11px/1.45 Rubik,sans-serif;font-style:normal;color:#ffd0a6;width:31px;text-align:center;padding-top:4px;flex:none}
+details p{padding:0 24px 20px 52px;font:400 17px/1.55 Rubik,sans-serif;color:#f1e6de;text-wrap:pretty}
+details[open] summary{min-height:0}
+@media (max-width:1000px){.faq-sec{padding-block:72px}.faq-grid{grid-template-columns:1fr;gap:32px}.faq-grid h2{margin-top:0}summary{font-size:18px}}
 
 /* contact */
-.contact h2{font-size:clamp(38px,5vw,64px);font-weight:900}
-.tagline{font:700 18px Rubik,sans-serif}
-.tagline span:nth-child(1){color:#c9b3ff}
-.tagline span:nth-child(3){color:var(--cy)}
-.reach{display:flex;flex-direction:column;gap:4px;width:100%;padding-top:20px;border-top:1px solid var(--line);font-weight:700;font-size:17px}
-.reach a{display:inline-flex;align-items:center;gap:10px;min-height:44px;text-decoration:none;align-self:flex-start}
+.contact{background:radial-gradient(60% 41.4% at 54% 50.4%,#182f53 0%,#171a3a 65%,#0e1630 100%);padding-block:141px 57px}
+.contact .grid{display:grid;grid-template-columns:minmax(0,639px) minmax(0,642px);justify-content:space-between;gap:40px;align-items:start}
+.contact h2{font:900 clamp(44px,5vw,72px)/1.45 Rubik,sans-serif;padding-inline-start:18px;margin-top:12px}
+.tagline{font:700 24px/1.45 Rubik,sans-serif;background:linear-gradient(90deg,#42f5dd 0%,#73c6ff 50%,#89a2ff 74%,#a17bff 100%);-webkit-background-clip:text;background-clip:text;color:transparent;margin-top:10px}
+.tagline .w{color:#fff;-webkit-text-fill-color:#fff}
+.reach{margin-top:78px;padding-top:31px;border-top:1px solid rgba(176,187,210,.6);display:flex;flex-direction:column;gap:0;font:500 20px/1.45 Rubik,sans-serif;max-width:591px;margin-inline-start:-10px}
+.reach a{display:inline-flex;align-items:center;gap:12px;text-decoration:none;width:max-content;padding-inline-start:10px}
 .reach a:hover{color:var(--cy)}
-.form{background:#fff;color:var(--ink);border-radius:22px;padding:clamp(22px,3vw,34px);display:flex;flex-direction:column;gap:18px;box-shadow:0 30px 80px -30px rgba(0,0,0,.8)}
-.form h3{font-size:22px;font-weight:800}
-.form .row{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:16px}
-.form label.f{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:700}
-.form input[type=text],.form input[type=tel],.form input[type=email]{min-height:50px;padding:0 14px;border-radius:8px;border:1px solid #c3c9da;background:#f3f5fa;color:var(--ink);font:400 15.5px Heebo,sans-serif;width:100%}
-.form input::placeholder{color:#636b8a}
-[dir="rtl"] .form input[dir="ltr"]{text-align:right}
-.form fieldset{border:0;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:12px}
-.form legend{font-size:14px;font-weight:700;margin-bottom:10px;padding:0}
-.opt{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:50px;padding:6px 14px;border-radius:8px;border:1px solid #c3c9da;background:#f3f5fa;font-size:14px;font-weight:700;cursor:pointer}
-.opt input{accent-color:#d9601a;width:17px;height:17px;flex:none}
-.opt:has(input:checked){border-color:var(--ink);background:#e3f9fc}
-.note{font-size:12.5px;color:#5a6384;text-align:center}
-.status{font-size:15px;font-weight:700;text-align:center}
+.reach svg{flex:none}
+.form{background:#fff;color:#080d19;border-radius:22px;padding:27px 28px 26px;display:flex;flex-direction:column}
+.form h3{font:700 28px/1.45 Rubik,sans-serif}
+.form .row{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:37px}
+.form .row+.row{margin-top:33px}
+.form label.f{display:flex;flex-direction:column;gap:10px;font:500 14px/1.45 Heebo,sans-serif}
+.form input[type=text],.form input[type=tel],.form input[type=email]{min-height:50px;padding:0 13px;border-radius:8px;border:1px solid #dfe3eb;background:#f4f5f8;color:#080d19;font:400 14px Heebo,sans-serif;width:100%}
+.form input::placeholder{color:#687080}
+.form input[type=tel],.form input[type=email]{text-align:right}
+fieldset{border:0;padding:0;margin:31px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:14px 24px}
+.form legend{font:500 14px/1.45 Heebo,sans-serif;margin-bottom:18px;padding:0;float:right;width:100%;grid-column:1/-1}
+.opt{position:relative;display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:54px;padding:6px 12px 6px 12px;border-radius:9px;border:1px solid #dfe3eb;background:#f4f5f8;font:500 13px/1.45 Heebo,sans-serif;cursor:pointer}
+.opt input{appearance:none;-webkit-appearance:none;flex:none;width:16px;height:16px;border-radius:50%;border:1.5px solid #df7a37;margin:0 4px;display:grid;place-items:center;cursor:pointer}
+.opt input:checked::after{content:"";width:8px;height:8px;border-radius:50%;background:#df7a37}
+.opt:has(input:checked){border-color:#df7a37;background:#fff7f1}
+.form #send{margin-top:47px;font:500 22px/1.2 Rubik,sans-serif;background:var(--cy);color:var(--navy);min-height:58px}
+.form #send:disabled{opacity:.6;cursor:progress}
+.note{margin-top:27px;font:400 12px/1.45 Heebo,sans-serif;color:#687080;text-align:center}
+.status{font:700 15px Heebo,sans-serif;text-align:center;margin-top:12px;min-height:0}
 .status:empty{display:none}
-.status.err{color:#b3261e}
-.status a{color:inherit}
-.done{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;padding-block:36px}
-.done svg{color:#0f9d58}
-.done h3{font-size:24px}
-.done p{color:#3a4266}
-.btn[disabled]{opacity:.6;cursor:progress;transform:none}
+.status.err{color:#b42318}
+.done{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:12px;min-height:420px;color:#080d19}
+.done svg{color:#0f9f6e}
+.done h3{font-size:26px}
+@media (max-width:1100px){.contact .grid{grid-template-columns:1fr;gap:48px}.reach{margin-top:40px}}
+@media (max-width:600px){.contact{padding-block:72px 40px}.form{padding:22px 18px}.form .row,fieldset{grid-template-columns:1fr;gap:16px}.form .row{margin-top:24px}.form .row+.row{margin-top:16px}.form #send{font-size:18px}.contact h2{padding-inline-start:0}.tagline{font-size:20px}}
 
 /* footer */
-.ftr{border-top:1px solid var(--line);background:var(--bg2)}
-.ftr-in{display:flex;flex-wrap:wrap;gap:8px 28px;align-items:center;justify-content:center;padding-block:26px 92px;font-size:14px;color:var(--mut);text-align:center}
+.ftr{background:radial-gradient(60% 41.4% at 54% -50%,#182f53 0%,#171a3a 65%,#0e1630 100%)}
+.ftr-in{border-top:1px solid rgba(176,187,210,.6);display:flex;flex-wrap:wrap;gap:6px 28px;align-items:center;justify-content:center;padding-block:36px 64px;font:300 20px/1.45 Rubik,sans-serif;text-align:center;max-width:none}
+.ftr-in small{font-size:14px;color:var(--mut)}
+@media (max-width:600px){.ftr-in{font-size:16px;padding-bottom:96px}}
 .wa-float{position:fixed;bottom:20px;inset-inline-start:20px;z-index:30;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#25d366;color:#fff;font-size:34px;text-decoration:none;box-shadow:0 12px 30px -8px rgba(0,0,0,.6);transition:transform .15s ease}
 .wa-float:hover{transform:scale(1.07)}
 
@@ -222,8 +323,8 @@ details p{padding:0 20px 18px;font-size:15.5px;color:#e6e9f5;text-wrap:pretty}
 
 <header class="hdr"><div class="wrap hdr-in">
   <a class="logo" href="#top" aria-label="AthenaAI Technologies">
-    <svg aria-hidden="true" width="36" height="36" viewBox="0 0 38 38" fill="none"><rect x="1" y="1" width="36" height="36" rx="8" stroke="#7df0ff" stroke-width="1.5"/><path d="M10 28 L19 9 L28 28" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="19" cy="22" r="2.6" fill="#7df0ff"/></svg>
-    <span class="logo-t" dir="ltr"><b>ATHENA <i>AI</i></b><small>TECHNOLOGIES</small></span>
+    <svg aria-hidden="true" viewBox="0 0 38 38" fill="none"><rect x="3" y="3" width="32" height="32" rx="7" fill="#0b1226" stroke="#80f0ff" stroke-width="1.6"/><path d="M12 27 L19 11 L26 27" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="19" cy="22" r="2.3" fill="#80f0ff"/></svg>
+    <span class="logo-t" dir="ltr"><b>ATHENA<i>AI</i></b><small>TECHNOLOGIES</small></span>
   </a>
   <nav class="nav" aria-label="ניווט ראשי">
     <a href="#why" data-en="Why a digital secretary?">למה מזכירה דיגיטלית?</a>
@@ -233,172 +334,179 @@ details p{padding:0 20px 18px;font-size:15.5px;color:#e6e9f5;text-wrap:pretty}
   </nav>
   <div class="hdr-act">
     <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="he" aria-pressed="true">עב</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
-    <a class="btn grad sm" href="#quote"><span data-en="Free consultation">פגישת ייעוץ ללא עלות</span><span class="ar" aria-hidden="true">←</span></a>
+    <a class="btn grad" href="#quote"><span data-en="Free consultation">פגישת ייעוץ ללא עלות</span><span class="ar" aria-hidden="true">←</span></a>
   </div>
 </div></header>
 
 <main id="main">
 
-<section id="top" class="glow"><div class="wrap hero">
+<section id="top" class="hero"><div class="wrap">
   <div class="hero-copy">
-    <h1><span data-en="Every unanswered inquiry">כל פנייה שלא נענית</span><br><em data-en="is a customer">היא לקוח</em><br><em data-en="who went to a competitor">שהלך למתחרה</em></h1>
+    <h1><span data-en="Every unanswered inquiry">כל פנייה שלא נענית</span> <span class="cy-t" data-en="is a customer">היא לקוח</span><span class="cy-t" data-en="lost to a competitor">שהלך למתחרה</span></h1>
     <p class="lead" data-en="A professional landing page designed for your brand + an AI agent that answers every inquiry, collects details and books meetings 24/7.">עיצוב דף נחיתה מקצועי ומותאם למותג שלך + סוכן AI שעונה לכל פנייה, אוסף פרטים ומתאם פגישות 24/7.</p>
     <div class="cta-row">
       <a class="btn cy" href="#quote"><span data-en="I want a digital secretary for my business">אני רוצה מזכירה דיגיטלית לעסק שלי</span><span class="ar" aria-hidden="true">←</span></a>
-      <a class="btn dark" href="#why"><span data-en="Try the chat yourself">נסו את הצ'אט בעצמכם</span><span class="ar" aria-hidden="true">←</span></a>
+      <a class="btn dark" href="#demo"><span data-en="Try the chat yourself">נסו את הצ'אט בעצמכם</span><span class="ar" aria-hidden="true">←</span></a>
     </div>
   </div>
-  <div class="art" aria-hidden="true">
-    <!-- תמונת ה-hero מהעיצוב: לשמור כ-assets/hero.png. כל עוד הקובץ חסר מוצג רקע חלופי -->
-    <div class="art-fallback" id="heroFallback"></div>
-    <img class="photo" src="assets/hero.png" alt="" onload="document.getElementById('heroFallback').style.visibility='hidden'" onerror="this.remove()">
-    <div class="badge247" dir="ltr">24/7</div>
-    <div class="notify"><small dir="ltr">22:15</small><b data-en="New inquiry received">פנייה חדשה נקלטה</b><span data-en="Meeting booked for tomorrow at 10:00">פגישה נקבעה למחר ב-10:00</span></div>
-  </div>
+  <img class="hero-art" src="assets/hero.webp" width="1772" height="1496" alt="בעל עסק מחייך מול הטלפון, עם התראה: פנייה חדשה נקלטה, פגישה נקבעה למחר ב-10:00, וזמינות 24/7" data-en-alt="A smiling business owner looking at his phone, with a notification: new inquiry received, meeting booked for tomorrow at 10:00, available 24/7" fetchpriority="high">
 </div></section>
 
-<section id="why"><div class="wrap two">
+<section id="why" class="why"><div class="wrap">
   <div class="stack">
-    <h2 class="sm" data-en="A full-time secretary: about ₪96,000 a year">מזכירה במשרה מלאה: כ-96,000 ₪ בשנה</h2>
-    <span class="tilt grad" data-en="A digital secretary: about ₪6,900 in the first year">מזכירה דיגיטלית: כ-6,900 ₪ בשנה הראשונה</span>
+    <h2 data-en="Full-time secretary: about ₪96,000 a year">מזכירה במשרה מלאה: כ-96,000 ₪ בשנה</h2>
+    <span class="tilt grad" data-en="Digital secretary: about ₪5,900 a year">מזכירה דיגיטלית: כ-5,900 ₪ בשנה</span>
     <div class="gives">
       <h3 data-en="What does she give you?">מה היא נותנת?</h3>
       <ul>
-        <li><svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3.5 9.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><b data-en="Smart answers for customers">מענה חכם ללקוחות</b><span data-en="Answers questions based on your business's information and knowledge.">מענה לשאלות על בסיס המידע והידע של העסק.</span></li>
-        <li><svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3.5 9.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><b data-en="Lead capture">איסוף לידים</b><span data-en="Collects prospects' details and passes them on for follow-up.">איסוף פרטי מתעניינים והעברת המידע להמשך טיפול.</span></li>
-        <li><svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3.5 9.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><b data-en="Personalised conversations">שיחות מותאמות אישית</b><span data-en="Runs the conversation around each customer's needs and questions.">ניהול שיחה בהתאם לצרכים ולשאלות של הלקוח.</span></li>
-        <li><svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3.5 9.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><b data-en="Business automation">אוטומציה עסקית</b><span data-en="Connects processes, systems and tools, as far as they technically allow.">חיבור תהליכים, מערכות וכלים בהתאם לאפשרויות הטכניות.</span></li>
-        <li><svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3.5 9.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><b data-en="Available around the clock">זמינות מסביב לשעון</b><span data-en="Customers get an answer outside business hours too.">הלקוחות יכולים לקבל מענה גם מחוץ לשעות הפעילות.</span></li>
+        <li><span class="tk" aria-hidden="true">✓</span><b data-en="Smart answers for customers">מענה חכם ללקוחות</b><span data-en="Answers questions based on your business information and know-how.">מענה לשאלות על בסיס המידע והידע של העסק.</span></li>
+        <li><span class="tk" aria-hidden="true">✓</span><b data-en="Lead collection">איסוף לידים</b><span data-en="Collects prospects' details and passes them on for follow-up.">איסוף פרטי מתעניינים והעברת המידע להמשך טיפול.</span></li>
+        <li><span class="tk" aria-hidden="true">✓</span><b data-en="Personalized conversations">שיחות מותאמות אישית</b><span data-en="Runs the conversation around the customer's needs and questions.">ניהול שיחה בהתאם לצרכים ולשאלות של הלקוח.</span></li>
+        <li><span class="tk" aria-hidden="true">✓</span><b data-en="Business automation">אוטומציה עסקית</b><span data-en="Connects processes, systems and tools as technically possible.">חיבור תהליכים, מערכות וכלים בהתאם לאפשרויות הטכניות.</span></li>
+        <li><span class="tk" aria-hidden="true">✓</span><b data-en="Around-the-clock availability">זמינות מסביב לשעון</b><span data-en="Customers get answers even outside business hours.">הלקוחות יכולים לקבל מענה גם מחוץ לשעות הפעילות.</span></li>
       </ul>
     </div>
-    <a class="btn dark sm" href="#packages" data-en="See the full solution">גלו את הפתרון המלא</a>
+    <a class="btn dark" href="#packages" data-en="Discover the full solution">גלו את הפתרון המלא</a>
   </div>
   <div class="chat" id="demo">
-    <div class="chat-head"><div><b data-en="Digital secretary">מזכירה דיגיטלית</b><small data-en="Online now">זמינה עכשיו</small></div><span class="tag" dir="ltr">ATHENA / DEMO</span></div>
+    <div class="chat-head"><div><b data-en="Digital secretary">מזכירה דיגיטלית</b><small data-en="●  Demo conversation">●  שיחת הדגמה</small></div><span class="tag" dir="ltr">ATHENA / WORKSPACE</span></div>
     <div id="chat"></div>
   </div>
 </div></section>
 
-<section id="compare"><div class="wrap">
+<section id="compare" class="compare"><div class="wrap">
   <div class="head"><h2 data-en="A landing page that doesn't just look amazing">דף נחיתה שלא רק נראה מדהים</h2><span class="tilt" data-en="It works for your business.">הוא עובד בשביל העסק שלך.</span></div>
   <div class="cmp-wrap" tabindex="0" role="region" aria-label="השוואה בין דף נחיתה רגיל לדף נחיתה שלנו"><table class="cmp">
-    <thead><tr><td></td><th scope="col" data-en="Regular landing page">דף נחיתה רגיל</th><th scope="col" class="us" data-en="Our landing page">דף נחיתה שלנו</th></tr></thead>
+    <thead><tr><td></td><th scope="col" data-en="A regular landing page">דף נחיתה רגיל</th><th scope="col" class="us" data-en="Our landing page">דף נחיתה שלנו</th></tr></thead>
     <tbody>
-      <tr><th scope="row" data-en="When a customer arrives at night">כשהלקוח מגיע בלילה</th><td data-en="Sees the page and fills in a form, or leaves">רואה את הדף וממלא טופס, או עוזב</td><td class="us" data-en="Gets an instant answer in the chat">מקבל מענה מיידי בצ'אט</td></tr>
-      <tr><th scope="row" data-en="Questions about price, hours and services">שאלות על מחיר, שעות ושירותים</th><td data-en="Has to wait for an answer">צריך לחכות לתשובה</td><td class="us" data-en="Gets an answer at once, based on your business information">מקבל תשובה מיד, על בסיס מידע העסק</td></tr>
-      <tr><th scope="row" data-en="Collecting details">איסוף פרטים</th><td data-en="A form some visitors never fill in">טופס שחלק מהגולשים לא ממלאים</td><td class="us" data-en="A conversation that leads naturally to leaving details">שיחה שמובילה בטבעיות להשארת פרטים</td></tr>
-      <tr><th scope="row" data-en="Booking meetings">תיאום פגישות</th><td data-en="Calls and messages back and forth">טלפון והודעות הלוך ושוב</td><td class="us" data-en="Booked in the calendar during the conversation">נקבע ביומן תוך כדי השיחה</td></tr>
-      <tr><th scope="row" data-en="Outside business hours">מה קורה מחוץ לשעות הפעילות</th><td data-en="The inquiry waits, and the customer turns to a competitor">הפנייה מחכה, והלקוח בינתיים פונה למתחרה</td><td class="us" data-en="The inquiry is received and handled">הפנייה נקלטת ומטופלת</td></tr>
-      <tr><th scope="row" data-en="Design and message">עיצוב ומסר</th><td data-en="Can look nice, sometimes a template">יכול להיות יפה, לפעמים תבנית</td><td class="us" data-en="Professional design matched to your brand + tailored marketing copy">עיצוב מקצועי מותאם למותג + כתיבה שיווקית מותאמת</td></tr>
+      <tr><th scope="row" data-en="When a customer arrives at night">כשהלקוח מגיע בלילה</th><td data-l="דף נחיתה רגיל" data-l-en="A regular landing page" data-en="Sees the page and fills a form, or leaves">רואה את הדף וממלא טופס, או עוזב</td><td class="us" data-l="דף נחיתה שלנו" data-l-en="Our landing page" data-en="Gets an instant answer in the chat">מקבל מענה מיידי בצ'אט</td></tr>
+      <tr><th scope="row" data-en="Questions about prices, hours and services">שאלות על מחיר, שעות ושירותים</th><td data-l="דף נחיתה רגיל" data-l-en="A regular landing page" data-en="Has to wait for an answer">צריך לחכות לתשובה</td><td class="us" data-l="דף נחיתה שלנו" data-l-en="Our landing page" data-en="Gets an answer right away, from your business info">מקבל תשובה מיד, על בסיס מידע העסק</td></tr>
+      <tr><th scope="row" data-en="Collecting details">איסוף פרטים</th><td data-l="דף נחיתה רגיל" data-l-en="A regular landing page" data-en="A form some visitors never fill in">טופס שחלק מהגולשים לא ממלאים</td><td class="us" data-l="דף נחיתה שלנו" data-l-en="Our landing page" data-en="A conversation that naturally leads to leaving details">שיחה שמובילה בטבעיות להשארת פרטים</td></tr>
+      <tr><th scope="row" data-en="Booking meetings">תיאום פגישות</th><td data-l="דף נחיתה רגיל" data-l-en="A regular landing page" data-en="Calls and messages back and forth">טלפון והודעות הלוך ושוב</td><td class="us" data-l="דף נחיתה שלנו" data-l-en="Our landing page" data-en="Booked in the calendar during the chat">נקבע ביומן תוך כדי השיחה</td></tr>
+      <tr><th scope="row" data-en="Outside business hours">מה קורה מחוץ לשעות הפעילות</th><td data-l="דף נחיתה רגיל" data-l-en="A regular landing page" data-en="The inquiry waits, and the customer goes to a competitor">הפנייה מחכה, והלקוח בינתיים פונה למתחרה</td><td class="us" data-l="דף נחיתה שלנו" data-l-en="Our landing page" data-en="The inquiry is captured and handled">הפנייה נקלטת ומטופלת</td></tr>
+      <tr><th scope="row" data-en="Design and message">עיצוב ומסר</th><td data-l="דף נחיתה רגיל" data-l-en="A regular landing page" data-en="Can look nice, sometimes a template">יכול להיות יפה, לפעמים תבנית</td><td class="us" data-l="דף נחיתה שלנו" data-l-en="Our landing page" data-en="Professional on-brand design + tailored marketing copy">עיצוב מקצועי מותאם למותג + כתיבה שיווקית מותאמת</td></tr>
     </tbody>
   </table></div>
-  <div class="after"><a class="btn grad" href="#quote"><span data-en="I'm convinced, I want a free consultation">שיכנעת אותי, אני רוצה שיחת ייעוץ ללא עלות</span><span class="ar" aria-hidden="true">←</span></a></div>
+  <div class="after"><a class="btn grad" href="#quote"><span data-en="You convinced me, I want a free consultation">שיכנעת אותי, אני רוצה שיחת ייעוץ ללא עלות</span><span class="ar" aria-hidden="true">←</span></a></div>
 </div></section>
 
 <section id="process" class="light"><div class="wrap">
-  <div class="head"><h2 data-en="3 steps and you have a digital presence">3 שלבים ויש לכם נוכחות דיגיטלית</h2><span class="tilt" data-en="within 14 days">תוך 14 יום</span></div>
+  <img class="laptop" src="assets/laptop.webp" width="790" height="518" alt="" loading="lazy">
+  <div class="head"><h2 data-en="3 steps to your digital presence">3 שלבים ויש לכם נוכחות דיגיטלית</h2><span class="tilt" data-en="within 7 days">תוך 7 יום</span></div>
   <ol class="steps">
-    <li><span class="num" dir="ltr">01</span><h3 data-en="Intro call">שיחת היכרות</h3><p data-en="We learn the business, the customers and the action the landing page needs to achieve.">מבינים את העסק, את הלקוחות ואת הפעולה שדף הנחיתה צריך להשיג.</p></li>
-    <li><span class="num" dir="ltr">02</span><h3 data-en="Brand-matched design + marketing copy">עיצוב מותאם למותג + כתיבה שיווקית</h3><p data-en="We design a landing page with its own visual language and copy that drives action, without compromising on user experience.">מעצבים לך דף נחיתה עם שפה חזותית ייחודית ותוכן שיווקי מניע לפעולה, בלי להתפשר על חוויית משתמש.</p></li>
+    <li><span class="num" dir="ltr">01</span><h3 data-en="Intro call">שיחת היכרות</h3><p data-en="We get to know the business, the customers and what the landing page needs to achieve.">מבינים את העסק, את הלקוחות ואת הפעולה שדף הנחיתה צריך להשיג.</p></li>
+    <li><span class="num" dir="ltr">02</span><h3 data-en="On-brand design + marketing copy">עיצוב מותאם למותג + כתיבה שיווקית</h3><p data-en="We design a landing page with a unique visual language and copy that drives action, without compromising on user experience.">מעצבים לך דף נחיתה עם שפה חזותית ייחודית ותוכן שיווקי מניע לפעולה, בלי להתפשר על חוויית משתמש.</p></li>
     <li><span class="num" dir="ltr">03</span><h3 data-en="Smart AI technology">טכנולוגיית AI חכמה</h3><p data-en="We build chatbots, agents and automations that extend what your business can do, and go live.">בונים לך צ'אטבוטים, סוכנים ואוטומציות שמרחיבות את היכולות של העסק, ועולים לאוויר.</p></li>
   </ol>
 </div></section>
 
-<section id="packages" class="glow"><div class="wrap">
-  <div class="head"><h2 data-en="Choose the solution that fits your business.">בוחרים את הפתרון שמתאים לעסק שלכם.</h2><p class="pk-sub" data-en="Whether you need an impressive landing page, a smart service experience or an advanced AI solution, we have a plan that fits your needs.">בין אם אתם צריכים דף נחיתה מרשים, חוויית שירות חכמה או פתרון AI מתקדם, יש לנו מסלול שמתאים לצרכים שלכם.</p></div>
+<section id="packages" class="pricing"><div class="wrap">
+  <div class="head"><h2 data-en="Choose the solution that fits your business.">בוחרים את הפתרון שמתאים לעסק שלכם.</h2><p class="pk-sub" data-en="Whether you need an impressive landing page, a smart service experience or an advanced AI solution, we have a plan that fits your needs.">בין אם אתם צריכים דף נחיתה מרשים, חוויית שירות חכמה או פתרון AI מתקדם – יש לנו מסלול שמתאים לצרכים שלכם.</p></div>
   <div class="pkgs">
 
     <article class="pkg">
-      <span class="tier" data-en="Landing page">דף נחיתה</span>
+      <span class="tier" data-en="Basic">בייסיק</span>
       <div class="price"><span dir="ltr">2,900</span><i>₪</i></div>
-      <p class="monthly" data-en="plus ₪99 a month for hosting and the site address">ועוד 99 ₪ לחודש לאחסון ולכתובת האתר</p>
+      <p class="monthly" data-en="+ ₪99 a month for hosting and the site address">ועוד 99 ₪ לחודש לאחסון ולכתובת האתר</p>
       <h3 data-en="A professional, custom-designed landing page">דף נחיתה מקצועי בעיצוב אישי</h3>
-      <p class="for" data-en="For a business that needs a professional landing page that brings inquiries">לעסק שצריך דף נחיתה מקצועי שמביא פניות</p>
+      <p class="for" data-en="For a business that needs a professional landing page that brings customers">לעסק שצריך דף נחיתה מקצועי שמביא לקוחות</p>
       <hr><h4 data-en="What's included">מה כלול בחבילה</h4>
-      <ul data-ticks>
-        <li data-en="Landing page design tailored to your business">עיצוב דף נחיתה בהתאמה אישית לעסק</li>
-        <li data-en="Matched to your branding and visual language">התאמה למיתוג ולשפה החזותית שלכם</li>
-        <li data-en="Headlines and marketing copy written to convert">כתיבת כותרות וטקסט שיווקי ממיר</li>
-        <li data-en="Fully responsive on mobile and desktop">התאמה מלאה למובייל ולמחשב</li>
-        <li data-en="Lead form and a direct WhatsApp button">טופס לידים וכפתור וואטסאפ ישיר</li>
-        <li data-en="Hebrew and English versions">גרסה בעברית ובאנגלית</li>
+      <ul>
+        <li data-en="Landing page designed for your business">עיצוב דף נחיתה בהתאמה אישית לעסק</li>
+        <li data-en="Matched to your branding and visual language">התאמה למיתוג ולשפה החזותית של העסק</li>
+        <li data-en="Converting headlines and marketing copy">כתיבת כותרות וטקסט שיווקי ממיר</li>
+        <li data-en="Fully responsive for mobile and desktop">התאמה מלאה למובייל ולמחשב</li>
+        <li data-en="Lead form">טופס לידים</li>
+        <li data-en="Direct link to a WhatsApp chat">קישור אוטומטי לצ'אט בוואטסאפ</li>
+        <li data-en="Hebrew and English versions">מתורגם לעברית ולאנגלית</li>
       </ul>
-      <a class="btn dark full" href="#quote" data-pick="page"><span data-en="I want a landing page first">אני רוצה קודם דף נחיתה</span><span class="ar" aria-hidden="true">←</span></a>
+      <a class="btn plain" href="#quote" data-pick="page"><span data-en="I want a landing page first">אני רוצה קודם דף נחיתה</span><span class="ar" aria-hidden="true">←</span></a>
     </article>
 
     <article class="pkg pop">
-      <span class="ribbon" data-en="Recommended plan">המסלול המומלץ</span>
-      <span class="tier" data-en="Landing page + AI chatbot">דף נחיתה + צ'אטבוט AI</span>
+      <img class="robot" src="assets/robot-chart.webp" width="290" height="232" alt="" loading="lazy">
+      <span class="ribbon" data-en="Most popular plan">המסלול הפופולרי</span>
+      <span class="tier" data-en="Popular">פופולרי</span>
       <div class="price"><span dir="ltr">3,900</span><i>₪</i></div>
-      <p class="monthly" data-en="plus ₪249 a month to run the chatbot">ועוד 249 ₪ לחודש להפעלת הצ'אטבוט</p>
+      <p class="monthly" data-en="One-time setup + ₪149 a month to run the bot">הקמה חד-פעמית + 149 ₪ לחודש להפעלת הבוט</p>
       <h3 data-en="Landing page + AI chatbot">דף נחיתה + צ'אטבוט AI</h3>
       <p class="for" data-en="For a business that wants a professional landing page and an instant answer for every visitor">לעסק שרוצה דף נחיתה מקצועי ומענה מיידי לכל גולש</p>
       <hr><h4 data-en="What's included">מה כלול בחבילה</h4>
-      <ul data-ticks>
-        <li data-en="Everything in the landing page plan">כל מה שכלול במסלול דף נחיתה</li>
-        <li data-en="An AI chatbot trained on your business, services and prices">צ'אטבוט AI שלמד את העסק, השירותים והמחירים שלכם</li>
+      <ul>
+        <li data-en="Everything in the Basic plan">כל מה שכלול בחבילה בייסיק</li>
+        <li data-en="An AI chatbot that learned your business">צ'אטבוט AI שלמד את העסק שלכם</li>
         <li data-en="Instant answers for visitors, 24/7">מענה מיידי לגולשים, 24/7</li>
-        <li data-en="Lead details collected during the conversation">איסוף פרטי לידים תוך כדי שיחה</li>
+        <li data-en="Collects lead details during the chat">איסוף פרטי לידים תוך כדי שיחה</li>
         <li data-en="Every inquiry sent straight to WhatsApp or email">העברת כל פנייה ישירות לוואטסאפ או למייל</li>
         <li data-en="Ongoing bot updates when something in the business changes">עדכון שוטף של הבוט כשמשהו בעסק משתנה</li>
       </ul>
-      <a class="btn line full" href="#quote" data-pick="bot"><span data-en="I want a smarter page">אני רוצה דף חכם יותר</span><span class="ar" aria-hidden="true">←</span></a>
+      <a class="btn" href="#quote" data-pick="bot"><span data-en="I want a smarter page">אני רוצה דף חכם יותר</span><span class="ar" aria-hidden="true">←</span></a>
     </article>
 
     <article class="pkg agent">
       <span class="tier" data-en="Full AI agent">סוכן AI מלא</span>
       <div class="price"><span dir="ltr">5,900</span><i>₪</i></div>
-      <p class="monthly" data-en="plus ₪349 a month to run the agent and its system integrations">ועוד 349 ₪ לחודש להפעלת הסוכן והחיבור למערכות</p>
-      <h3 data-en="Landing page + advanced business AI solution">דף נחיתה + פתרון AI עסקי מתקדם</h3>
-      <p class="for" data-en="For a business that wants a professional landing page and an AI agent that handles the inquiry end to end">לעסק שרוצה דף נחיתה מקצועי וסוכן AI שמטפל בפנייה עד הסוף</p>
+      <p class="monthly" data-en="One-time setup + ₪349 a month to run the agent">הקמה חד-פעמית + 349 ₪ לחודש להפעלת הסוכן</p>
+      <h3 data-en="Landing page + advanced business AI">דף נחיתה + פתרון AI עסקי מתקדם</h3>
+      <p class="for" data-en="For a business that wants a professional landing page + an AI agent that handles the inquiry end to end">לעסק שרוצה דף נחיתה מקצועי + סוכן AI שיטפל בפנייה עד הסוף</p>
       <hr><h4 data-en="What's included">מה כלול בחבילה</h4>
-      <ul data-ticks>
-        <li data-en="Everything in the landing page + chatbot plan">כל מה שכלול במסלול דף נחיתה + צ'אטבוט</li>
-        <li data-en="An AI agent that filters and ranks inquiries by how serious they are">סוכן AI שמסנן ומדרג פניות לפי רמת רצינות</li>
-        <li data-en="Meetings booked automatically, straight into your calendar">תיאום פגישות אוטומטי ישירות ביומן שלכם</li>
-        <li data-en="Connected to your business CRM">חיבור למערכת ה-CRM של העסק</li>
-        <li data-en="A summary of every conversation, sent to you">סיכום כל שיחה ושליחתו אליכם</li>
-        <li data-en="Ongoing guidance and support in running the agent">ליווי ותמיכה שוטפת בהפעלת הסוכן</li>
+      <ul>
+        <li data-en="Everything in Basic + Popular">כל מה שכלול בחבילות בייסיק + פופולרי</li>
+        <li data-en="An AI agent that filters and ranks inquiries by seriousness">סוכן AI שמסנן ומדרג פניות לפי רמת רצינות</li>
+        <li data-en="Automatic meeting booking straight into your calendar">תיאום פגישות אוטומטי ישירות ביומן שלכם</li>
+        <li data-en="Connection to your business CRM">חיבור למערכת ה-CRM של העסק</li>
+        <li data-en="A summary of every conversation sent to you">סיכום כל שיחה ושליחתו אליכם</li>
+        <li data-en="Ongoing guidance and support running the agent">ליווי ותמיכה שוטפת בהפעלת הסוכן</li>
       </ul>
-      <a class="btn cy full" href="#quote" data-pick="agent"><span data-en="I want an AI agent for my business">אני רוצה סוכן AI לעסק שלי</span><span class="ar" aria-hidden="true">←</span></a>
+      <a class="btn cy" href="#quote" data-pick="agent"><span data-en="I want an AI agent for my business">אני רוצה סוכן AI לעסק שלי</span><span class="ar" aria-hidden="true">←</span></a>
     </article>
 
   </div>
-  <p class="fine" data-en="Prices exclude VAT · Consultation call with no commitment">המחירים אינם כוללים מע״מ · שיחת ייעוץ ללא התחייבות</p>
+  <p class="fine" data-en="Prices exclude VAT · Free consultation, no commitment">המחירים אינם כוללים מע״מ · שיחת ייעוץ ללא התחייבות</p>
 </div></section>
 
-<section id="about"><div class="wrap who">
-  <!-- תמונה של עידן: לשמור כ-assets/idan.jpg -->
-  <div class="avatar"><img src="assets/idan.jpg" alt="עידן גל" onerror="this.replaceWith(document.createTextNode('ע״ג'))"></div>
+<section id="about" class="about"><div class="wrap who">
+  <div class="avatar"><img src="assets/idan.png" width="181" height="174" alt="עידן גל" data-en-alt="Idan Gal" loading="lazy" onerror="this.replaceWith(document.createTextNode('ע״ג'))"></div>
   <div class="t">
-    <h2 class="sm" data-en="Nice to meet you, I'm Idan">נעים להכיר, עידן</h2>
-    <p data-en="I'm Idan Gal, a data scientist with an M.Sc. in Information Systems Engineering from Ben-Gurion University. I build data and AI systems, and now bring the same skills to landing pages for businesses.">אני עידן גל, מדען נתונים עם תואר שני בהנדסת מערכות מידע מאוניברסיטת בן-גוריון. אני בונה מערכות נתונים ו-AI, ועכשיו מביא את אותן יכולות לדפי נחיתה של עסקים.</p>
+    <h2 data-en="Nice to meet you, I'm Idan">נעים להכיר, עידן</h2>
+    <p data-en="I'm Idan Gal, a data scientist with an M.Sc. in Information Systems Engineering from Ben-Gurion University. I build data and AI systems, and now I bring the same capabilities to business landing pages.">אני עידן גל, מדען נתונים עם תואר שני בהנדסת מערכות מידע מאוניברסיטת בן-גוריון. אני בונה מערכות נתונים ו-AI, ועכשיו מביא את אותן יכולות לדפי נחיתה של עסקים.</p>
     <p class="sign" data-en="Idan Gal, founder of AthenaAI Technologies">עידן גל, מייסד AthenaAI Technologies</p>
   </div>
 </div></section>
 
-<section id="faq"><div class="wrap faq-grid">
-  <h2><span data-en="Everything worth">כל מה שכדאי</span><br><span data-en="knowing">לדעת</span> <em data-en="before">לפני</em><br><em data-en="we start.">שמתחילים.</em></h2>
-  <div class="faq">
-    <details><summary><span data-en="What can the chatbot answer?">על מה הצ'אטבוט יודע לענות?</span><i dir="ltr">01</i></summary><p data-en="Whatever you give us: services, prices, hours and common questions. When it has no answer, it invites the visitor to leave details and does not make one up.">על המידע שתספקו לנו: שירותים, מחירים, שעות ושאלות נפוצות. כשאין לו תשובה, הוא מציע לגולש להשאיר פרטים ולא ממציא.</p></details>
-    <details><summary><span data-en="Can I order only a landing page, without a chatbot?">אפשר להזמין רק דף נחיתה, בלי צ'אטבוט?</span><i dir="ltr">02</i></summary><p data-en="Yes, that is the landing page plan. The chatbot can be added later.">כן, זה מסלול דף נחיתה. את הצ'אטבוט אפשר להוסיף גם בהמשך.</p></details>
-    <details><summary><span data-en="What does the monthly fee cover?">על מה התשלום החודשי?</span><i dir="ltr">03</i></summary><p data-en="In every plan it covers hosting and the site address. In the AI plans it also covers the cost of running the AI model in each conversation, plus updates to the bot.">בכל המסלולים הוא מכסה את האחסון ואת כתובת האתר. במסלולים עם AI הוא מכסה גם את עלות ההפעלה של מודל ה-AI בכל שיחה ואת העדכונים של הבוט.</p></details>
-    <details><summary><span data-en="Will the page work well on mobile?">הדף יעבוד טוב בנייד?</span><i dir="ltr">04</i></summary><p data-en="Yes. Every page is designed for the phone screen first and tested on it before launch.">כן. כל דף מתוכנן קודם כל למסך הטלפון ונבדק עליו לפני העלייה לאוויר.</p></details>
-    <details><summary><span data-en="How do I get a quote?">איך מקבלים הצעת מחיר?</span><i dir="ltr">05</i></summary><p data-en="Leave your details in the form below and we'll come back with a quote that fits your business.">משאירים פרטים בטופס למטה, ונחזור אליכם עם הצעה שמתאימה לעסק.</p></details>
+<!-- המלצות: בעיצוב יש כרגע טקסט זמני ("כאן כותבים המלצות"), לכן החלק מוסתר.
+     כדי להציג: למחוק את המאפיין hidden ולהחליף את הטקסטים בהמלצות אמיתיות. -->
+<section id="reviews" class="reviews" hidden><div class="wrap">
+  <div class="head"><h2 data-en="What do people say behind my back?">מה אומרים עליי מאחורי הגב?</h2><span class="tilt" data-en="Only good things">רק דברים טובים</span></div>
+  <div class="revs">
+    <figure><blockquote>כאן כותבים המלצות</blockquote><figcaption><b>שם הלקוח</b><span>עיר</span></figcaption></figure>
+    <figure><blockquote>כאן כותבים המלצות</blockquote><figcaption><b>שם הלקוח</b><span>עיר</span></figcaption></figure>
+    <figure><blockquote>כאן כותבים המלצות</blockquote><figcaption><b>שם הלקוח</b><span>עיר</span></figcaption></figure>
   </div>
 </div></section>
 
-<section id="quote" class="glow contact"><div class="wrap two">
+<section id="faq" class="faq-sec"><div class="wrap faq-grid">
+  <h2><span data-en="Everything">כל מה שכדאי</span><br><span data-en="you should know">לדעת</span> <span class="cy-t" data-en="before">לפני</span><br><span class="cy-t" data-en="you start.">שמתחילים.</span></h2>
+  <div class="faq">
+    <details><summary><span data-en="What can the chatbot answer?">על מה הצ'אטבוט יודע לענות?</span><i dir="ltr">01</i></summary><p data-en="Anything in the information you give us: services, prices, hours and common questions. When it doesn't have an answer, it offers the visitor to leave their details and passes the inquiry to you.">על המידע שתספקו לנו: שירותים, מחירים, שעות ושאלות נפוצות. כשאין לו תשובה, הוא מציע לגולש להשאיר פרטים ומעביר אליכם את הפנייה.</p></details>
+    <details><summary><span data-en="Can I order just a landing page, without a chatbot?">אפשר להזמין רק דף נחיתה, בלי צ'אטבוט?</span><i dir="ltr">02</i></summary><p data-en="Yes, that's the Basic plan. You can add the chatbot later.">כן, זה מסלול בייסיק. את הצ'אטבוט אפשר להוסיף גם בהמשך.</p></details>
+    <details><summary><span data-en="Why is there a monthly fee on the chatbot plans?">למה יש תשלום חודשי בחבילות עם צ'אטבוט?</span><i dir="ltr">03</i></summary><p data-en="On every plan it covers hosting and the site address. On the AI plans it also covers the cost of running the AI model in every conversation, plus ongoing updates.">בכל המסלולים הוא מכסה את האחסון ואת כתובת האתר. במסלולים עם AI הוא מכסה גם את עלות ההפעלה של מודל ה-AI בכל שיחה, ועדכונים שוטפים.</p></details>
+    <details><summary><span data-en="Will the page work well on mobile?">הדף יעבוד טוב בנייד?</span><i dir="ltr">04</i></summary><p data-en="Yes. Every page is designed for the phone screen first and tested on it before going live.">כן. כל דף מתוכנן קודם כל למסך הטלפון ונבדק עליו לפני העלייה לאוויר.</p></details>
+    <details><summary><span data-en="How do I get a quote?">איך מקבלים הצעת מחיר?</span><i dir="ltr">05</i></summary><p data-en="Leave your details in the form below and we'll get back to you with an offer that fits your business.">משאירים פרטים בטופס למטה, ונחזור אליכם עם הצעה שמתאימה לעסק.</p></details>
+  </div>
+</div></section>
+
+<section id="quote" class="contact"><div class="wrap grid">
   <div class="stack">
     <h2><span data-en="Let's build">בואו נבנה</span><br><span data-en="something exceptional.">משהו יוצא דופן.</span></h2>
-    <p class="tagline"><span data-en="Precise design.">עיצוב מדויק.</span> <span data-en="Copy that sells.">תוכן שמוכר.</span> <span data-en="AI that works for you.">AI שעובד בשבילך.</span></p>
+    <p class="tagline"><span data-en="Precise design.">עיצוב מדויק.</span> <span class="w" data-en="Copy that sells.">תוכן שמוכר.</span> <span data-en="AI that works for you.">AI שעובד בשבילך.</span></p>
     <div class="reach">
-      <a href="tel:+972524268076"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 22 22" fill="none"><path d="M6.5 3.5h3l1.2 4-2 1.4a10 10 0 004.4 4.4l1.4-2 4 1.2v3c0 1-.8 1.8-1.8 1.8C9.800 17.300 4.700 12.200 4.700 5.300c0-1 .8-1.8 1.8-1.8z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span dir="ltr">052-426-8076</span></a>
-      <a href="mailto:idangal2426@gmail.com"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 22 22" fill="none"><rect x="3" y="5" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M4 7l7 5 7-5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span dir="ltr">idangal2426@gmail.com</span></a>
+      <a href="https://wa.me/972524268076" target="_blank" rel="noopener"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2.2a7.8 7.8 0 00-6.7 11.8L2.4 17.6l3.7-.9A7.8 7.8 0 1010 2.2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M7.4 6.3c.3 0 .5 0 .6.4l.6 1.4c.1.2 0 .4-.1.6l-.5.6c.6 1.2 1.6 2.1 2.8 2.7l.6-.6c.2-.2.4-.2.6-.1l1.4.6c.3.1.4.3.3.6-.1.9-.9 1.6-1.8 1.6-3 0-5.7-2.7-5.7-5.7 0-.9.6-1.7 1.2-2.1z" fill="currentColor"/></svg><span dir="ltr">052-426-8076</span></a>
+      <a href="mailto:idangal2426@gmail.com"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2.5" y="4.5" width="15" height="11" rx="1.8" stroke="currentColor" stroke-width="1.5"/><path d="M3.3 5.6L10 10.6l6.7-5" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg><span dir="ltr">idangal2426@gmail.com</span></a>
     </div>
   </div>
   <form class="form" id="form" novalidate>
-    <h3 data-en="Fill in your details and I'll get back to you soon!">מלאו פרטים ואצור איתכם קשר בהקדם!</h3>
+    <h3 data-en="Leave your details and I'll get back to you soon!">מלאו פרטים ואצור איתכם קשר בהקדם!</h3>
     <div class="row">
       <label class="f"><span data-en="Full name">שם מלא</span><input type="text" name="name" autocomplete="name" placeholder="השם שלך" data-en-ph="Your name"></label>
       <label class="f"><span data-en="Business name">שם העסק</span><input type="text" name="business" autocomplete="organization" placeholder="איך קוראים לעסק?" data-en-ph="What's the business called?"></label>
@@ -408,14 +516,14 @@ details p{padding:0 20px 18px;font-size:15.5px;color:#e6e9f5;text-wrap:pretty}
       <label class="f"><span data-en="Email">דוא״ל</span><input type="email" name="email" autocomplete="email" dir="ltr" placeholder="name@company.com"></label>
     </div>
     <fieldset>
-      <legend data-en="What are you interested in?">במה אתם מתעניינים?</legend>
-      <label class="opt"><span data-en="Designed landing page">דף נחיתה מעוצב</span><input type="radio" name="pkg" value="page"></label>
+      <legend data-en="What are you interested in?">במה אתה מתעניין?</legend>
+      <label class="opt"><span data-en="A designed landing page">דף נחיתה מעוצב</span><input type="radio" name="pkg" value="page"></label>
+      <label class="opt"><span data-en="Landing page + advanced business AI">דף נחיתה + פתרון AI עסקי מתקדם</span><input type="radio" name="pkg" value="agent"></label>
       <label class="opt"><span data-en="Landing page + AI chatbot">דף נחיתה + צ'אטבוט AI</span><input type="radio" name="pkg" value="bot"></label>
-      <label class="opt"><span data-en="Landing page + advanced business AI solution">דף נחיתה + פתרון AI עסקי מתקדם</span><input type="radio" name="pkg" value="agent"></label>
       <label class="opt"><span data-en="Not sure yet what I need">עדיין לא בטוח/ה מה אני צריך/ה</span><input type="radio" name="pkg" value="unsure"></label>
     </fieldset>
     <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;inset-inline-start:-9999px;width:1px;height:1px;opacity:0">
-    <button class="btn cy full" id="send" type="submit"><span id="sendLabel" data-en="Book me a free first consultation call">קבעו לי שיחת ייעוץ ראשונית ללא עלות</span><span class="ar" aria-hidden="true">←</span></button>
+    <button class="btn full" id="send" type="submit"><span id="sendLabel" data-en="Book my free first consultation">קבעו לי שיחת ייעוץ ראשונית ללא עלות</span><span class="ar" aria-hidden="true">←</span></button>
     <p class="status" id="status" role="status" aria-live="polite"></p>
     <p class="note" data-en="Your details are sent straight to us by email.">הפרטים נשלחים ישירות אלינו למייל.</p>
   </form>
@@ -424,8 +532,8 @@ details p{padding:0 20px 18px;font-size:15.5px;color:#e6e9f5;text-wrap:pretty}
 </main>
 
 <footer class="ftr"><div class="wrap ftr-in">
-  <span data-en="UI/UX design: Esti Avitan | Site development: Idan Gal">עיצוב UI UX - אסתי אביטן | פיתוח אתר עידן גל</span>
-  <span dir="ltr">© 2026 AthenaAI Technologies</span>
+  <span data-en="UI UX design: Esti Avitan | Site development: Idan Gal">עיצוב UI UX - אסתי אביטן | פיתוח אתר עידן גל</span>
+  <small dir="ltr">© 2026 AthenaAI Technologies</small>
 </div></footer>
 
 <a class="wa-float" href="https://wa.me/972524268076" target="_blank" rel="noopener" aria-label="דברו איתנו בוואטסאפ"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
@@ -434,15 +542,15 @@ details p{padding:0 20px 18px;font-size:15.5px;color:#e6e9f5;text-wrap:pretty}
 var WA = "972524268076";
 var lang = "he", asked = [];
 var TITLES = { he: "AthenaAI Technologies | דף נחיתה עם מזכירה דיגיטלית לעסק", en: "AthenaAI Technologies | Landing pages with a digital secretary" };
-var TICK = '<svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3.5 9.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+var UNUSED_TICK = '<svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3.5 9.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 var CHAT = {
-  he: { you: "לקוח", greet: "היי, אני המזכירה הדיגיטלית של AthenaAI. כך נראה הצ'אט שיושב בדף שלכם. מה תרצו לדעת?", cta: "להשאיר פרטים", reset: "מהתחלה",
+  he: { you: "לקוח", intro: [["u","שלום, רציתי לשמוע על השירותים שלכם."],["b","בשמחה! אוכל להסביר על השירותים ולעזור בהעברת פנייה לצוות. במה אפשר לעזור?"],["u","אשמח לתאם שיחת היכרות."],["b","אפשר להשאיר שם ומספר טלפון? אעביר את הבקשה לצוות להמשך תיאום."]], more: "יש לכם שאלה? נסו:", greet: "היי, אני המזכירה הדיגיטלית של AthenaAI. כך נראה הצ'אט שיושב בדף שלכם. מה תרצו לדעת?", cta: "להשאיר פרטים", reset: "מהתחלה", hT: "פנייה להמשך טיפול", hS: "איסוף פרטים ← העברה לבעל העסק או לצוות",
     qa: [
       { id: "price", q: "כמה עולה דף נחיתה?", a: "דף נחיתה עולה 2,900 ₪. דף עם צ'אטבוט AI עולה 3,900 ₪, וסוכן AI מלא 5,900 ₪. לכל מסלול יש תשלום חודשי, והמחירים לפני מע״מ. הפירוט המלא בחבילות למטה." },
       { id: "bot", q: "מה הבוט יודע לעשות?", a: "לענות על שאלות לפי המידע של העסק שלכם, לאסוף שם, טלפון וצורך, ולהעביר לכם פנייה מסודרת. במסלול הסוכן הוא גם מתאם פגישות ביומן." },
       { id: "human", q: "אפשר לדבר עם אדם?", a: "בטח. השאירו שם וטלפון בטופס ועידן יחזור אליכם אישית." }
     ] },
-  en: { you: "Customer", greet: "Hi, I'm AthenaAI's digital secretary. This is what the chat on your page looks like. What would you like to know?", cta: "Leave my details", reset: "Start over",
+  en: { you: "Customer", intro: [["u","Hi, I'd like to hear about your services."],["b","Happy to! I can explain the services and pass your inquiry to the team. How can I help?"],["u","I'd like to book an intro call."],["b","Could you leave your name and phone number? I'll pass the request to the team to schedule it."]], more: "Got a question? Try:", greet: "Hi, I'm AthenaAI's digital secretary. This is what the chat on your page looks like. What would you like to know?", cta: "Leave my details", reset: "Start over", hT: "Inquiry passed on for follow-up", hS: "Details collected → sent to the business owner or team",
     qa: [
       { id: "price", q: "How much is a landing page?", a: "A landing page is ₪2,900. A page with an AI chatbot is ₪3,900, and a full AI agent is ₪5,900. Each plan has a monthly fee, and prices exclude VAT. The full breakdown is in the packages below." },
       { id: "bot", q: "What can the bot do?", a: "Answer questions from your business information, collect a name, phone and need, and pass you an organized inquiry. In the agent plan it also books meetings in your calendar." },
@@ -451,13 +559,16 @@ var CHAT = {
 };
 function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
 function renderChat(){
-  var t = CHAT[lang], h = '<div class="chat-log" aria-live="polite"><div class="msg bot"><small dir="ltr">Athena AI</small>'+esc(t.greet)+'</div>';
-  asked.forEach(function(id){ var q=t.qa.filter(function(x){return x.id===id;})[0]; if(q){ h+='<div class="msg user"><small>'+esc(t.you)+'</small>'+esc(q.q)+'</div><div class="msg bot"><small dir="ltr">Athena AI</small>'+esc(q.a)+'</div>'; } });
-  h += '</div><div class="chips">';
+  var t = CHAT[lang], h = '<div class="chat-log" aria-live="polite">';
+  function m(who, txt){ return who==="u" ? '<div class="msg user"><small>'+esc(t.you)+'</small>'+esc(txt)+'</div>' : '<div class="msg bot"><small dir="ltr">Athena AI</small>'+esc(txt)+'</div>'; }
+  t.intro.forEach(function(x){ h += m(x[0], x[1]); });
+  asked.forEach(function(id){ var q=t.qa.filter(function(x){return x.id===id;})[0]; if(q){ h += m("u", q.q) + m("b", q.a); } });
+  h += '</div><div class="handoff"><b>'+esc(t.hT)+'</b><span>'+esc(t.hS)+'</span></div><div class="chips">';
   var left = t.qa.filter(function(x){return asked.indexOf(x.id)===-1;});
   left.forEach(function(x){ h+='<button type="button" class="chip" data-ask="'+x.id+'">'+esc(x.q)+'</button>'; });
-  if(!left.length){ h+='<a class="btn cy sm" href="#quote">'+esc(t.cta)+'</a><button type="button" class="chip quiet" data-reset="1">'+esc(t.reset)+'</button>'; }
+  if(!left.length){ h+='<a class="btn cy" href="#quote">'+esc(t.cta)+'</a><button type="button" class="chip quiet" data-reset="1">'+esc(t.reset)+'</button>'; }
   document.getElementById("chat").innerHTML = h+'</div>';
+  if(asked.length){ var log = document.querySelector("#chat .chat-log"); log.scrollTop = log.scrollHeight; }
 }
 function setLang(l){
   lang = l;
@@ -471,6 +582,10 @@ function setLang(l){
   document.querySelectorAll("[data-en-ph]").forEach(function(el){
     if(!el.hasAttribute("data-he-ph")) el.setAttribute("data-he-ph", el.placeholder);
     el.placeholder = el.getAttribute(l==="he" ? "data-he-ph" : "data-en-ph");
+  });
+  document.querySelectorAll("[data-en-alt]").forEach(function(el){
+    if(!el.hasAttribute("data-he-alt")) el.setAttribute("data-he-alt", el.alt);
+    el.alt = el.getAttribute(l==="he" ? "data-he-alt" : "data-en-alt");
   });
   document.querySelectorAll(".lang button").forEach(function(b){ b.setAttribute("aria-pressed", String(b.getAttribute("data-lang")===l)); });
   try{ localStorage.setItem("athena-lang", l); }catch(x){}
@@ -503,15 +618,6 @@ function sendForm(e){
     .then(function(d){ if(!d || d.ok !== true) throw new Error("rejected"); showDone(); })
     .catch(function(){ btn.disabled = false; setStatus(m.fail, true); });
 }
-document.querySelectorAll("ul[data-ticks] li").forEach(function(li){
-  var s = document.createElement("span");
-  s.textContent = li.textContent;
-  s.setAttribute("data-en", li.getAttribute("data-en"));
-  li.removeAttribute("data-en");
-  li.textContent = "";
-  li.insertAdjacentHTML("afterbegin", TICK);
-  li.appendChild(s);
-});
 document.addEventListener("click", function(e){
   var el = e.target.closest("[data-lang],[data-ask],[data-reset],[data-pick]");
   if(!el) return;
