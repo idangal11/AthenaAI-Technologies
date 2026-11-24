@@ -1,6 +1,6 @@
 # Cloudflare Worker that sits between the landing page and the Claude API.
 # The API key lives only here (as a secret named ANTHROPIC_API_KEY), never in index.html.
-name = "athena-chat"
+name = "athenaai-technologies"
 main = "src/index.js"
 compatibility_date = "2026-11-01"
 compatibility_flags = ["nodejs_compat"]
