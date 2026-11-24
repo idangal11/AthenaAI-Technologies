@@ -116,6 +116,7 @@ main{overflow-x:clip}
 .chat-log{flex:1;display:flex;flex-direction:column;gap:14px;max-height:400px;overflow-y:auto;padding-inline:2px;scrollbar-width:thin;scrollbar-color:#2a3a5c transparent}
 .msg{max-width:358px;width:80%;padding:8px 13px 12px;border-radius:11.2px;font:400 13.5px/1.45 Rubik,sans-serif;white-space:pre-line;overflow-wrap:anywhere;animation:pop .35s ease both}
 .msg.typing{width:auto}
+.chat-log .msg:not(:last-child){animation:none}
 .dots{display:inline-flex;gap:4px;padding-top:4px}.dots i{width:6px;height:6px;border-radius:50%;background:var(--cy);opacity:.35;animation:blink 1.2s infinite}.dots i:nth-child(2){animation-delay:.2s}.dots i:nth-child(3){animation-delay:.4s}
 @keyframes blink{50%{opacity:1}}
 .chat-form{margin-top:12px;display:flex;gap:8px}
@@ -324,9 +325,27 @@ fieldset{border:0;padding:0;margin:31px 0 0;display:grid;grid-template-columns:1
 @media (max-width:600px){.ftr-in{font-size:16px;padding-bottom:96px}}
 .wa-float{position:fixed;bottom:20px;inset-inline-start:20px;z-index:30;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#25d366;color:#fff;font-size:34px;text-decoration:none;box-shadow:0 12px 30px -8px rgba(0,0,0,.6);transition:transform .15s ease}
 .wa-float:hover{transform:scale(1.07)}
+.chat-launch{position:fixed;bottom:20px;inset-inline-end:20px;z-index:31;min-height:58px;padding:0 22px 0 18px;border-radius:100px;border:0;display:inline-flex;align-items:center;gap:10px;background:var(--cy);color:var(--navy);font:700 16px Rubik,sans-serif;cursor:pointer;box-shadow:0 12px 30px -8px rgba(0,0,0,.6),0 0 0 6px rgba(128,240,255,.15);transition:transform .15s ease}
+.chat-launch:hover{transform:translateY(-2px)}
+.chat-launch.open{background:#19294c;color:#fff}
+.chat-pop{position:fixed;z-index:32;bottom:90px;inset-inline-end:20px;width:min(390px,calc(100vw - 32px));height:min(600px,calc(100dvh - 120px));min-height:0}
+.chat-pop[hidden],.chat-teaser[hidden]{display:none}
+.chat-pop .chat-body{flex:1;min-height:0;display:flex;flex-direction:column;padding:16px}
+.chat-pop .chat-log{max-height:none;min-height:0}
+.chat-pop .msg{width:88%}
+.chat-pop .chips{margin-top:12px}
+.pop-x{border:0;background:transparent;color:#bcc8df;font-size:18px;width:40px;height:40px;margin:-6px;border-radius:50%;cursor:pointer}
+.pop-x:hover{background:#243a63;color:#fff}
+.chat-teaser{position:fixed;z-index:31;bottom:88px;inset-inline-end:20px;max-width:250px;display:flex;align-items:flex-start;gap:8px;background:#fff;color:var(--navy);padding:12px 12px 12px 16px;border-radius:14px;font:500 14px/1.4 Rubik,sans-serif;box-shadow:0 12px 30px -8px rgba(0,0,0,.5);cursor:pointer;animation:pop .35s ease both}
+.teaser-x{border:0;background:transparent;color:#5b6680;cursor:pointer;font-size:13px;padding:2px}
+@media (max-width:600px){
+  .chat-launch{padding:0;width:58px;justify-content:center}
+  .chat-launch span{display:none}
+  .chat-pop{bottom:88px;inset-inline:16px;width:auto;height:calc(100dvh - 110px)}
+}
 
 @keyframes pop{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:none}}
-@media (prefers-reduced-motion:reduce){.msg,.dots i{animation:none}html{scroll-behavior:auto}.btn,.wa-float{transition:none}}
+@media (prefers-reduced-motion:reduce){.msg,.dots i{animation:none}html{scroll-behavior:auto}.btn,.wa-float,.chat-launch{transition:none}.chat-teaser{animation:none}}
 </style>
 </head>
 <body>
@@ -381,7 +400,7 @@ fieldset{border:0;padding:0;margin:31px 0 0;display:grid;grid-template-columns:1
   </div>
   <div class="chat" id="demo">
     <div class="chat-head"><div><b data-en="Digital secretary">מזכירה דיגיטלית</b><small data-en="●  Live AI, try it">●  AI חי, נסו אותו</small></div><span class="tag" dir="ltr">ATHENA / WORKSPACE</span></div>
-    <div id="chat"></div>
+    <div id="chat" class="chat-body"></div>
   </div>
 </div></section>
 
@@ -547,6 +566,12 @@ fieldset{border:0;padding:0;margin:31px 0 0;display:grid;grid-template-columns:1
   <small dir="ltr">© 2026 AthenaAI Technologies</small>
 </div></footer>
 
+<div class="chat chat-pop" id="chatPop" role="dialog" aria-modal="false" aria-labelledby="chatPopT" hidden>
+  <div class="chat-head"><div><b id="chatPopT" data-en="Digital secretary">מזכירה דיגיטלית</b><small data-en="●  Replies in seconds">●  עונה תוך שניות</small></div><button type="button" class="pop-x" id="chatClose" aria-label="סגירה">✕</button></div>
+  <div class="chat-body"></div>
+</div>
+<div class="chat-teaser" id="chatTeaser" hidden><span data-en="Hi! Questions about a landing page? Ask me">היי! שאלה על דף נחיתה? שאלו אותי</span><button type="button" class="teaser-x" aria-label="סגירה">✕</button></div>
+<button type="button" class="chat-launch" id="chatLaunch" aria-controls="chatPop" aria-expanded="false"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 5h16v11H9l-5 4V5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="9" cy="10.5" r="1.2" fill="currentColor"/><circle cx="12" cy="10.5" r="1.2" fill="currentColor"/><circle cx="15" cy="10.5" r="1.2" fill="currentColor"/></svg><span data-en="Ask the AI">שאלו את ה-AI</span></button>
 <a class="wa-float" href="https://wa.me/972524268076" target="_blank" rel="noopener" aria-label="דברו איתנו בוואטסאפ"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
 
 <script>
@@ -557,7 +582,7 @@ var UNUSED_TICK = '<svg aria-hidden="true" width="18" height="18" viewBox="0 0 1
 /* Live AI chat. CHAT_ENDPOINT is the Cloudflare Worker in chat-worker/ (it holds the Claude API key).
    Leave it empty and the chat falls back to the scripted answers below. */
 var CHAT_ENDPOINT = "https://athenaai-technologies.idangal2426.workers.dev";
-var convo = [], busy = false, leadSaved = false, chatTouched = false;
+var convo = [], busy = false, leadSaved = false, chatTouched = false, activeBox = null;
 var CHAT = {
   he: { you: "אתם", greet: "היי, אני המזכירה הדיגיטלית של AthenaAI, וזה בדיוק הצ'אט שיישב בדף שלכם. ספרו לי על העסק או שאלו כל שאלה.", ph: "כתבו שאלה...", send: "שליחה", typing: "מקלידה...", hT: "הפרטים הועברו לעידן", hS: "הוא יחזור אליכם בהקדם", cta: "להשאיר פרטים בטופס", reset: "שיחה חדשה",
     err: "הצ'אט לא זמין כרגע. אפשר לכתוב לנו בוואטסאפ 052-426-8076 או להשאיר פרטים בטופס למטה.", rate: "רגע, יותר מדי הודעות בבת אחת. נסו שוב בעוד דקה.", fallback: "על זה עידן יענה לכם הכי טוב. השאירו שם וטלפון בטופס למטה או כתבו בוואטסאפ 052-426-8076.",
@@ -588,10 +613,12 @@ function renderChat(){
   h += '<div class="chips">';
   if(!convo.length) t.qa.forEach(function(x){ h+='<button type="button" class="chip" data-ask="'+x.id+'">'+esc(x.q)+'</button>'; });
   else h += '<a class="chip quiet" href="#quote">'+esc(t.cta)+'</a><button type="button" class="chip quiet" data-reset="1">'+esc(t.reset)+'</button>';
-  h += '</div><form class="chat-form" id="chatForm" autocomplete="off"><input id="chatIn" name="q" maxlength="1000" placeholder="'+esc(t.ph)+'" aria-label="'+esc(t.ph)+'" dir="auto"'+(busy?' disabled':'')+'><button type="submit" class="chat-send" aria-label="'+esc(t.send)+'"'+(busy?' disabled':'')+'><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></form>';
-  document.getElementById("chat").innerHTML = h;
-  var log = document.querySelector("#chat .chat-log"); log.scrollTop = log.scrollHeight;
-  if(chatTouched && !busy){ var inp = document.getElementById("chatIn"); if(inp) inp.focus({preventScroll:true}); }
+  h += '</div><form class="chat-form" autocomplete="off"><input class="chat-in" name="q" maxlength="1000" placeholder="'+esc(t.ph)+'" aria-label="'+esc(t.ph)+'" dir="auto"'+(busy?' disabled':'')+'><button type="submit" class="chat-send" aria-label="'+esc(t.send)+'"'+(busy?' disabled':'')+'><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></form>';
+  document.querySelectorAll(".chat-body").forEach(function(box){
+    box.innerHTML = h;
+    var log = box.querySelector(".chat-log"); log.scrollTop = log.scrollHeight;
+  });
+  if(chatTouched && !busy && activeBox){ var inp = activeBox.querySelector(".chat-in"); if(inp) inp.focus({preventScroll:true}); }
 }
 function scripted(text){
   var hit = CHAT[lang].qa.filter(function(x){ return x.q===text; })[0];
@@ -608,11 +635,11 @@ function ask(text){
     .then(function(r){ return r.json().then(function(d){ return { status: r.status, d: d }; }); })
     .then(function(x){
       if(x.status===429) throw new Error("rate");
-      if(x.status!==200 || !x.d) throw new Error("bad");
+      if(x.status!==200 || !x.d) throw new Error("http "+x.status+" "+((x.d&&x.d.error)||""));
       if(x.d.lead) leadSaved = true;
       convo.push({ role: "assistant", content: x.d.reply || CHAT[lang].fallback });
     })
-    .catch(function(e){ convo.push({ role: "assistant", content: e && e.message==="rate" ? CHAT[lang].rate : CHAT[lang].err }); })
+    .catch(function(e){ try{ console.warn("athena chat error:", e && e.message); }catch(x){} convo.push({ role: "assistant", content: e && e.message==="rate" ? CHAT[lang].rate : CHAT[lang].err }); })
     .then(function(){ busy = false; renderChat(); });
 }
 function setLang(l){
@@ -672,7 +699,25 @@ document.addEventListener("click", function(e){
   else if(el.hasAttribute("data-pick")){ var r = document.querySelector('#form input[name="pkg"][value="'+el.getAttribute("data-pick")+'"]'); if(r) r.checked = true; }
 });
 document.getElementById("form").addEventListener("submit", sendForm);
-document.addEventListener("submit", function(e){ if(e.target.id!=="chatForm") return; e.preventDefault(); var inp = document.getElementById("chatIn"); var v = inp.value; inp.value = ""; ask(v); });
+document.addEventListener("submit", function(e){ if(!e.target.classList.contains("chat-form")) return; e.preventDefault(); activeBox = e.target.closest(".chat-body"); var inp = e.target.querySelector(".chat-in"); var v = inp.value; inp.value = ""; ask(v); });
+/* Floating chat launcher: the same conversation, reachable from anywhere on the page. */
+var pop = document.getElementById("chatPop"), launcher = document.getElementById("chatLaunch"), teaser = document.getElementById("chatTeaser");
+function setPop(open){
+  pop.hidden = !open; launcher.setAttribute("aria-expanded", String(open)); launcher.classList.toggle("open", open);
+  if(teaser) teaser.hidden = true;
+  if(open){ renderChat(); var inp = pop.querySelector(".chat-in"); if(inp) inp.focus({preventScroll:true}); activeBox = pop.querySelector(".chat-body"); }
+  else launcher.focus({preventScroll:true});
+}
+launcher.addEventListener("click", function(){ setPop(pop.hidden); });
+document.getElementById("chatClose").addEventListener("click", function(){ setPop(false); });
+document.addEventListener("keydown", function(e){ if(e.key==="Escape" && !pop.hidden) setPop(false); });
+if(teaser){
+  teaser.addEventListener("click", function(e){ if(e.target.closest(".teaser-x")){ teaser.hidden = true; return; } setPop(true); });
+  setTimeout(function(){
+    var seen = false; try{ seen = sessionStorage.getItem("athena-teaser")==="1"; sessionStorage.setItem("athena-teaser","1"); }catch(x){}
+    if(!seen && !chatTouched && pop.hidden) teaser.hidden = false;
+  }, 9000);
+}
 renderChat();
 try{ if(localStorage.getItem("athena-lang")==="en") setLang("en"); }catch(x){}
 </script>
