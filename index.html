@@ -210,7 +210,7 @@ a.chip{display:inline-flex;align-items:center;text-decoration:none}
 .pricing{background:var(--navy);padding-block:112px 72px}
 .pricing .head h2{font-size:clamp(28px,3.1vw,44px)}
 .pk-sub{font:400 18px/1.45 Rubik,sans-serif;max-width:640px;margin-top:20px;text-wrap:balance}
-.pkgs{display:grid;grid-template-columns:repeat(3,minmax(0,420px));justify-content:center;gap:26px;margin-top:75px;align-items:stretch}
+.pkgs{display:grid;grid-template-columns:repeat(3,minmax(0,420px));justify-content:center;gap:26px;margin-top:110px;align-items:stretch}
 .pkg{position:relative;display:flex;flex-direction:column;background:var(--navy2);border:1px solid #354a70;border-radius:18px;padding:26px 27px 31px;min-height:732px}
 .pkg .tier{font:500 14px/1.45 Rubik,sans-serif;color:var(--mut)}
 .price{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:17px;font:700 61px/1.45 Rubik,sans-serif;height:75px}
@@ -346,6 +346,28 @@ fieldset{border:0;padding:0;margin:31px 0 0;display:grid;grid-template-columns:1
 
 @keyframes pop{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.msg,.dots i{animation:none}html{scroll-behavior:auto}.btn,.wa-float,.chat-launch{transition:none}.chat-teaser{animation:none}}
+
+/* scroll motion (only when JS adds .motion; nothing hides without it) */
+.scroll-bar{position:fixed;top:0;inset-inline:0;height:3px;z-index:40;background:var(--grad);transform-origin:right center;transform:scaleX(0);pointer-events:none}
+html[dir=ltr] .scroll-bar{transform-origin:left center}
+.motion .rv{opacity:0;translate:0 34px;filter:blur(6px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),translate .9s cubic-bezier(.2,.7,.2,1),filter .9s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.motion .rv.in{opacity:1;translate:0 0;filter:none}
+.motion .rv-side{translate:-48px 0}
+.motion .rv-side.rv-r{translate:48px 0}
+.motion .rv-side.in{translate:0 0}
+.motion .w{display:inline-block;overflow:hidden;vertical-align:bottom;padding-block:.06em;margin-block:-.06em}
+.motion .w>span{display:inline-block;translate:0 110%;transition:translate 1s cubic-bezier(.2,.75,.15,1);transition-delay:var(--d,0s)}
+.motion .words.in .w>span{translate:0 0}
+.motion .tilt.pop{opacity:0;scale:.6;transition:opacity .5s ease,scale .8s cubic-bezier(.3,1.5,.5,1);transition-delay:var(--d,.35s)}
+.motion .tilt.pop.in{opacity:1;scale:1}
+.motion .glowline{position:relative}
+.motion .cmp-wrap.in .cmp thead th.us::before{animation:sweep 1.2s cubic-bezier(.2,.7,.2,1) .3s both}
+@keyframes sweep{from{clip-path:inset(0 0 0 100%)}to{clip-path:inset(0 0 0 0)}}
+.motion .hero-art,.motion .laptop{will-change:translate}
+.motion .pkg.pop .ribbon{background-image:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.55) 50%,transparent 70%);background-size:250% 100%;background-repeat:no-repeat;background-position:150% 0;background-color:var(--cy)}
+.motion .pkg.pop.in .ribbon{animation:shine 1.6s ease 1s 1 both}
+@keyframes shine{to{background-position:-50% 0}}
+@media (prefers-reduced-motion:reduce){.scroll-bar{display:none}}
 </style>
 </head>
 <body>
@@ -720,6 +742,76 @@ if(teaser){
 }
 renderChat();
 try{ if(localStorage.getItem("athena-lang")==="en") setLang("en"); }catch(x){}
+</script>
+<script>
+/* Scroll-driven reveal: headings rise word by word, blocks fade up in sequence, prices count up, light parallax on the hero and laptop. Skipped entirely for reduced motion or old browsers. */
+(function(){
+  if(!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var root = document.documentElement; root.classList.add("motion");
+  var q = function(s, el){ return [].slice.call((el||document).querySelectorAll(s)); };
+  function words(el){
+    var nodes = [], walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null);
+    while(walk.nextNode()) nodes.push(walk.currentNode);
+    var i = 0;
+    nodes.forEach(function(n){
+      if(!n.nodeValue.trim()) return;
+      var frag = document.createDocumentFragment();
+      n.nodeValue.split(/(\s+)/).forEach(function(part){
+        if(!part) return;
+        if(/^\s+$/.test(part)){ frag.appendChild(document.createTextNode(part)); return; }
+        var w = document.createElement("span"), s = document.createElement("span");
+        w.className = "w"; s.textContent = part; s.style.setProperty("--d", (i++ * 0.07) + "s");
+        w.appendChild(s); frag.appendChild(w);
+      });
+      n.parentNode.replaceChild(frag, n);
+    });
+    el.classList.add("words");
+  }
+  /* headings */
+  q("h1, main h2").forEach(function(h){ words(h); h.classList.add("rv-h"); });
+  /* chips */
+  q(".tilt").forEach(function(t){ t.classList.add("pop"); });
+  /* single blocks */
+  q(".lead, .cta-row, .pk-sub, .gives h3, .why .stack > .btn, .after, .fine, .tagline, .reach, .who p, .avatar").forEach(function(el){ el.classList.add("rv"); });
+  q(".lead").forEach(function(el){ el.style.setProperty("--d", ".45s"); });
+  q(".cta-row").forEach(function(el){ el.style.setProperty("--d", ".65s"); });
+  q(".hero-art").forEach(function(el){ el.classList.add("rv", "rv-side"); el.style.setProperty("--d", ".2s"); });
+  q("#demo, .form").forEach(function(el){ el.classList.add("rv", "rv-side"); });
+  q(".cmp-wrap").forEach(function(el){ el.classList.add("rv"); });
+  /* staggered groups */
+  [".gives li", ".steps li", ".pkgs .pkg", ".cmp tbody tr", ".faq details", ".revs figure"].forEach(function(sel){
+    q(sel).forEach(function(el, i){ el.classList.add("rv"); el.style.setProperty("--d", (i * 0.12) + "s"); });
+  });
+  /* counters */
+  function count(el){
+    var txt = el.textContent, end = parseInt(txt.replace(/\D/g, ""), 10); if(!end) return;
+    var t0 = null, dur = 1400;
+    function step(t){ if(!t0) t0 = t; var p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 4);
+      el.textContent = Math.round(end * e).toLocaleString("en-US"); if(p < 1) requestAnimationFrame(step); else el.textContent = txt; }
+    requestAnimationFrame(step);
+  }
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var el = e.target; el.classList.add("in"); io.unobserve(el);
+      if(el.classList.contains("pkg")){ var n = el.querySelector(".price span"); if(n) setTimeout(function(){ count(n); }, 250); }
+    });
+  }, { rootMargin: "0px 0px -10% 0px", threshold: 0.12 });
+  q(".rv, .rv-h, .tilt.pop").forEach(function(el){ io.observe(el); });
+  /* scroll progress + parallax */
+  var bar = document.createElement("div"); bar.className = "scroll-bar"; bar.setAttribute("aria-hidden", "true"); document.body.appendChild(bar);
+  var hero = document.querySelector(".hero-art"), lap = document.querySelector(".laptop"), ticking = false;
+  function frame(){
+    ticking = false;
+    var y = scrollY, max = root.scrollHeight - innerHeight;
+    bar.style.transform = "scaleX(" + (max > 0 ? y / max : 0) + ")";
+    if(hero && y < innerHeight * 1.2 && hero.classList.contains("in")) hero.style.translate = "0 " + (y * 0.12).toFixed(1) + "px";
+    if(lap){ var r = lap.getBoundingClientRect(); if(r.bottom > 0 && r.top < innerHeight){ var k = (r.top + r.height / 2 - innerHeight / 2) / innerHeight; lap.style.translate = "0 " + (k * 40).toFixed(1) + "px"; lap.style.rotate = (k * -3).toFixed(2) + "deg"; } }
+  }
+  addEventListener("scroll", function(){ if(!ticking){ ticking = true; requestAnimationFrame(frame); } }, { passive: true });
+  if(hero) hero.addEventListener("transitionend", function(e){ if(e.propertyName === "translate" && hero.classList.contains("in")) hero.style.transition = "none"; });
+  frame();
+})();
 </script>
 </body>
 </html>
