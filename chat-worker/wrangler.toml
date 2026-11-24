@@ -1,0 +1,22 @@
+# Cloudflare Worker that sits between the landing page and the Claude API.
+# The API key lives only here (as a secret named ANTHROPIC_API_KEY), never in index.html.
+name = "athena-chat"
+main = "src/index.js"
+compatibility_date = "2026-11-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+# Model for the chat. Haiku is the cheapest; switch to "claude-sonnet-5-5" for smarter, pricier answers.
+MODEL = "claude-haiku-5-5"
+# Sites allowed to call this worker (comma separated).
+ALLOWED_ORIGINS = "https://idangal11.github.io,http://localhost:8080,http://127.0.0.1:8080"
+# Google Apps Script web app that saves leads (same one the page form uses). Empty = leads are not saved from chat.
+LEAD_ENDPOINT = "https://script.google.com/macros/s/AKfycbyeWjgWJj2WjuvwAUGXWPC5WScvYsfdPjKma7GmBhAJwsepgV5Hn9V8MaSbr8QRqBPt9g/exec"
+
+# Abuse guard: at most 15 chat messages per visitor IP per minute.
+[[ratelimits]]
+name = "CHAT_LIMITER"
+namespace_id = "1001"
+  [ratelimits.simple]
+  limit = 15
+  period = 60
