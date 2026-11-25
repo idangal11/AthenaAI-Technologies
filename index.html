@@ -637,10 +637,12 @@ function renderChat(){
   if(busy) h += '<div class="msg bot typing"><small dir="ltr">Athena AI</small><span class="dots" aria-label="'+esc(t.typing)+'"><i></i><i></i><i></i></span></div>';
   h += '</div>';
   if(leadSaved) h += '<div class="handoff"><b>'+esc(t.hT)+'</b><span>'+esc(t.hS)+'</span></div>';
-  h += '<div class="chips">';
-  if(!convo.length) t.qa.forEach(function(x){ h+='<button type="button" class="chip" data-ask="'+x.id+'">'+esc(x.q)+'</button>'; });
-  else h += '<a class="chip quiet" href="#quote">'+esc(t.cta)+'</a><button type="button" class="chip quiet" data-reset="1">'+esc(t.reset)+'</button>';
-  h += '</div><form class="chat-form" autocomplete="off"><input class="chat-in" name="q" maxlength="1000" placeholder="'+esc(t.ph)+'" aria-label="'+esc(t.ph)+'" dir="auto"'+(busy?' disabled':'')+'><button type="submit" class="chat-send" aria-label="'+esc(t.send)+'"'+(busy?' disabled':'')+'><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></form>';
+  if(!convo.length){
+    h += '<div class="chips">';
+    t.qa.forEach(function(x){ h+='<button type="button" class="chip" data-ask="'+x.id+'">'+esc(x.q)+'</button>'; });
+    h += '</div>';
+  }
+  h += '<form class="chat-form" autocomplete="off"><input class="chat-in" name="q" maxlength="1000" placeholder="'+esc(t.ph)+'" aria-label="'+esc(t.ph)+'" dir="auto"'+(busy?' disabled':'')+'><button type="submit" class="chat-send" aria-label="'+esc(t.send)+'"'+(busy?' disabled':'')+'><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></form>';
   document.querySelectorAll(".chat-body").forEach(function(box){
     box.innerHTML = h;
     var log = box.querySelector(".chat-log"); log.scrollTop = log.scrollHeight;
