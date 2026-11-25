@@ -2,7 +2,7 @@
 <html lang="he" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, interactive-widget=resizes-content">
 <title>AthenaAI Technologies | דף נחיתה עם מזכירה דיגיטלית לעסק</title>
 <meta name="description" content="AthenaAI Technologies מעצבת דף נחיתה מקצועי ומותאם למותג, עם סוכן AI שעונה לכל פנייה, אוסף פרטים ומתאם פגישות 24/7. החל מ-2,900 ₪.">
 <meta property="og:title" content="AthenaAI Technologies | דף נחיתה עם מזכירה דיגיטלית לעסק">
@@ -341,7 +341,12 @@ fieldset{border:0;padding:0;margin:31px 0 0;display:grid;grid-template-columns:1
 @media (max-width:600px){
   .chat-launch{padding:0;width:58px;justify-content:center}
   .chat-launch span{display:none}
-  .chat-pop{bottom:88px;inset-inline:16px;width:auto;height:calc(100dvh - 110px)}
+  /* On phones the open panel fills the visible area above the keyboard (sizes come from visualViewport in JS). */
+  .chat-pop{top:calc(var(--vvt,0px) + 8px);bottom:auto;inset-inline:8px;width:auto;height:calc(var(--vvh,100dvh) - 16px)}
+  .chat-launch.open,.chat-launch.open ~ .wa-float{display:none}
+  .chat-pop .chat-head{min-height:0;padding-block:10px}
+  .chat-pop .chips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+  .chat-pop .chip{flex:none}
 }
 
 @keyframes pop{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:none}}
@@ -727,9 +732,16 @@ var pop = document.getElementById("chatPop"), launcher = document.getElementById
 function setPop(open){
   pop.hidden = !open; launcher.setAttribute("aria-expanded", String(open)); launcher.classList.toggle("open", open);
   if(teaser) teaser.hidden = true;
-  if(open){ renderChat(); var inp = pop.querySelector(".chat-in"); if(inp) inp.focus({preventScroll:true}); activeBox = pop.querySelector(".chat-body"); }
+  if(open){ fitPop(); renderChat(); var inp = pop.querySelector(".chat-in"); if(inp) inp.focus({preventScroll:true}); activeBox = pop.querySelector(".chat-body"); }
   else launcher.focus({preventScroll:true});
 }
+function fitPop(){
+  var vv = window.visualViewport; if(!vv || pop.hidden) return;
+  pop.style.setProperty("--vvh", Math.round(vv.height) + "px");
+  pop.style.setProperty("--vvt", Math.round(vv.offsetTop) + "px");
+  var log = pop.querySelector(".chat-log"); if(log) log.scrollTop = log.scrollHeight;
+}
+if(window.visualViewport){ visualViewport.addEventListener("resize", fitPop); visualViewport.addEventListener("scroll", fitPop); }
 launcher.addEventListener("click", function(){ setPop(pop.hidden); });
 document.getElementById("chatClose").addEventListener("click", function(){ setPop(false); });
 document.addEventListener("keydown", function(e){ if(e.key==="Escape" && !pop.hidden) setPop(false); });
